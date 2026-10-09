@@ -1587,6 +1587,70 @@ def omni_engine(args, model_path, output_path, dataset_list, datasets_config, da
             data_loader_list_train.append(DataLoader(dataset=d, batch_size=train_batch_size, shuffle=train_sampler is None,
                                             sampler=train_sampler,
                                             num_workers=args.workers, pin_memory=accelerator.pin_memory))
+    training_partition_names = list(dataset_list)
+    training_partition_dataset_keys = list(dataset_list)
+    training_partition_head_indices = list(range(len(dataset_list)))
+
+    if args.mode == "train" and getattr(args, "vindr_annotators", False):
+        if training_strategy != "cyclic":
+            raise ValueError("--vindr_annotators supports cyclic training only")
+        if not dataset_list or dataset_list[0] != "VinDrCXR":
+            raise ValueError("--vindr_annotators requires VinDrCXR as the first dataset")
+
+        vindr_class = type(dataset_train_list[0])
+        vindr_augment = getattr(dataset_train_list[0], "augment", None)
+        partition_datasets = []
+        for rad_id in range(1, 18):
+            rad_file = "dataset/VinDrCXR/annotators/R{}.txt".format(rad_id)
+            if not os.path.isfile(rad_file):
+                raise FileNotFoundError("Missing VinDr partition: {}".format(rad_file))
+            partition_datasets.append(
+                vindr_class(
+                    images_path=datasets_config["VinDrCXR"]["data_dir"],
+                    file_path=rad_file,
+                    crop_size=args.crop_size,
+                    resize=args.resize,
+                    augment=vindr_augment,
+                )
+            )
+        partition_datasets.extend(dataset_train_list[1:])
+
+        training_partition_names = ["VinDrCXR_R{}".format(i) for i in range(1, 18)] + list(dataset_list[1:])
+        training_partition_dataset_keys = ["VinDrCXR"] * 17 + list(dataset_list[1:])
+        training_partition_head_indices = [0] * 17 + list(range(1, len(dataset_list)))
+
+        data_loader_list_train = []
+        train_sampler_list = []
+        for d in partition_datasets:
+            train_sampler = DistributedSampler(
+                d,
+                num_replicas=accelerator.world_size,
+                rank=accelerator.rank,
+                shuffle=True,
+                seed=args.seed,
+            ) if accelerator.distributed else None
+            train_sampler_list.append(train_sampler)
+            data_loader_list_train.append(
+                DataLoader(
+                    dataset=d,
+                    batch_size=train_batch_size,
+                    shuffle=train_sampler is None,
+                    sampler=train_sampler,
+                    num_workers=args.workers,
+                    pin_memory=accelerator.pin_memory,
+                )
+            )
+
+        if accelerator.is_main_process:
+            _print_and_log(
+                "VII(c) training partitions: {}".format(training_partition_names),
+                train_log,
+            )
+            _print_and_log(
+                "VII(c) head mapping: {}".format(training_partition_head_indices),
+                train_log,
+            )
+
     data_loader_list_val = []
     val_sampler_list = []
     for dv in dataset_val_list:
@@ -1716,7 +1780,7 @@ def omni_engine(args, model_path, output_path, dataset_list, datasets_config, da
                                                    args.pretrain_epochs, len(data_loader_joint))
         elif args.ema_mode == "epoch":
             momentum_schedule = cosine_scheduler(args.momentum_teacher, 1,
-                                                   args.pretrain_epochs, len(dataset_list))
+                                                   args.pretrain_epochs, len(data_loader_list_train))
         elif args.ema_mode == "iteration":
             iters_per_epoch = 0
             for d in data_loader_list_train:
@@ -1936,10 +2000,12 @@ def omni_engine(args, model_path, output_path, dataset_list, datasets_config, da
             it = start_epoch if args.ema_mode == "epoch" else start_epoch * len(data_loader_joint)
             global_step = start_epoch * len(data_loader_joint)
         else:
-            it = start_epoch * len(dataset_list)
+            it = start_epoch * len(data_loader_list_train)
             global_step = start_epoch * sum(len(data_loader) for data_loader in data_loader_list_train)
         
         for epoch in range(start_epoch, args.pretrain_epochs):
+            if os.environ.get("ARK_DIAG_ONE_CYCLE") == "1" and epoch > start_epoch:
+                break
             lr_scheduler.step(epoch)
             if accelerator.is_main_process:
                 learning_rates = [
@@ -2066,7 +2132,7 @@ def omni_engine(args, model_path, output_path, dataset_list, datasets_config, da
                 for i, data_loader in enumerate(data_loader_list_train):
                     if train_sampler_list[i] is not None:
                         train_sampler_list[i].set_epoch(epoch)
-                    criterion = torch.nn.CrossEntropyLoss() if datasets_config[dataset_list[i]]['task_type'] == "multi-class classification" else torch.nn.BCEWithLogitsLoss()
+                    criterion = torch.nn.CrossEntropyLoss() if datasets_config[training_partition_dataset_keys[i]]['task_type'] == "multi-class classification" else torch.nn.BCEWithLogitsLoss()
                     momentum = momentum_schedule[it]
                     coff = (momentum - 0.9) * 5
                     if accelerator.is_main_process:
@@ -2074,7 +2140,7 @@ def omni_engine(args, model_path, output_path, dataset_list, datasets_config, da
                             "Dataset {} ({}): momentum = {:.6f}, "
                             "classification/consistency = {:.4f}/{:.4f} ({:.1f}%/{:.1f}%)".format(
                                 i + 1,
-                                dataset_list[i],
+                                training_partition_names[i],
                                 momentum,
                                 1 - coff,
                                 coff,
@@ -2087,14 +2153,14 @@ def omni_engine(args, model_path, output_path, dataset_list, datasets_config, da
                         model_path,
                         "snapshots",
                         "cycle_{:04d}".format(epoch + 1),
-                        dataset_list[i],
+                        training_partition_names[i],
                     )
                     if accelerator.is_main_process:
                         os.makedirs(snapshot_directory, exist_ok=True)
                     task_metrics = train_one_epoch(
                         model,
-                        i,
-                        dataset_list[i],
+                        training_partition_head_indices[i],
+                        training_partition_names[i],
                         data_loader,
                         device,
                         criterion,
@@ -2120,7 +2186,7 @@ def omni_engine(args, model_path, output_path, dataset_list, datasets_config, da
                             "Finished {} Cycle={}: Loss={:.4f} "
                             "Cls={:.4f} [{:.1f}%] Cons={:.4f} [{:.1f}%] m={:.5f}"
                             .format(
-                                dataset_list[i],
+                                training_partition_names[i],
                                 epoch + 1,
                                 task_metrics["total_loss"],
                                 task_metrics["classification_loss"],
@@ -2133,6 +2199,8 @@ def omni_engine(args, model_path, output_path, dataset_list, datasets_config, da
                         )
                     it += 1
                     global_step += len(data_loader)
+                    if getattr(args, "eval_cycle_only", False) and i != len(data_loader_list_train) - 1 and not (os.environ.get("ARK_EVAL_R10") == "1" and training_partition_names[i] == "VinDrCXR_R10"):
+                        continue
                     _evaluate_test_sets(
                         student_model,
                         teacher,
@@ -2144,7 +2212,7 @@ def omni_engine(args, model_path, output_path, dataset_list, datasets_config, da
                         evaluation_directory,
                         epoch + 1,
                         epoch,
-                        "after_{}".format(dataset_list[i]),
+                        "after_{}".format(training_partition_names[i]),
                         shared_val_test_splits,
                         train_log,
                     )
@@ -2160,7 +2228,7 @@ def omni_engine(args, model_path, output_path, dataset_list, datasets_config, da
                         evaluation_directory,
                         epoch + 1,
                         epoch,
-                        "after_{}".format(dataset_list[i]),
+                        "after_{}".format(training_partition_names[i]),
                         shared_val_test_splits,
                         train_log,
                     )

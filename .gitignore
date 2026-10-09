@@ -8,3 +8,16 @@ base/Models/
 
 # Python bytecode caches
 __pycache__/
+
+# Local experiment outputs
+*_seed_*/
+slurm-*.out
+slurm-*.err
+*.tar.gz
+presentation_results/
+.gaudi_pydeps/
+*.before_*
+
+# Locally generated dataset partitions
+base/dataset/VinDrCXR/annotators/
+vii_c_fl_smoke/
