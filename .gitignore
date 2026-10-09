@@ -10,7 +10,6 @@ base/Models/
 __pycache__/
 
 # Local experiment outputs
-*_seed_*/
 slurm-*.out
 slurm-*.err
 *.tar.gz

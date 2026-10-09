@@ -1,0 +1,265 @@
+2026-09-27 03:05:09 INFO ================================================================================
+2026-09-27 03:05:09 INFO ARK+ PRETRAINING CONFIGURATION
+2026-09-27 03:05:09 INFO ================================================================================
+2026-09-27 03:05:09 INFO Run Name: chexpert_only
+2026-09-27 03:05:09 INFO Seed: 100
+2026-09-27 03:05:09 INFO Output Directory: /workspace/chexpert_only_seed_100
+2026-09-27 03:05:09 INFO Backbone: swin_base
+2026-09-27 03:05:09 INFO Initialization: imagenet
+2026-09-27 03:05:09 INFO Pretrained Weights: True
+2026-09-27 03:05:09 INFO Projector Features: 1376
+2026-09-27 03:05:09 INFO Datasets: ['CheXpert']
+2026-09-27 03:05:09 INFO Class Counts: [14]
+2026-09-27 03:05:09 INFO Global Batch Size: 200
+2026-09-27 03:05:09 INFO Per-rank Batch Size: 200
+2026-09-27 03:05:09 INFO Distributed World Size: 1
+2026-09-27 03:05:09 INFO Data Loader Workers Per Rank: 8
+2026-09-27 03:05:09 INFO Cycles: 200
+2026-09-27 03:05:09 INFO Training Strategy: cyclic
+2026-09-27 03:05:09 INFO Optimizer: sgd
+2026-09-27 03:05:09 INFO Initial Learning Rate: 0.0001
+2026-09-27 03:05:09 INFO Peak Learning Rate: 0.01
+2026-09-27 03:05:09 INFO Final Learning Rate: 1e-05
+2026-09-27 03:05:09 INFO Warmup Cycles: 20
+2026-09-27 03:05:09 INFO Teacher Momentum Base: 0.9
+2026-09-27 03:05:09 INFO Teacher EMA Mode: epoch
+2026-09-27 03:05:09 INFO Validation Evaluation: student and teacher after every dataset
+2026-09-27 03:05:09 INFO Test Evaluation: student and teacher after every dataset
+2026-09-27 03:05:09 INFO Train Augmentation: enabled (stochastic student transforms)
+2026-09-27 03:05:09 INFO Test-time Augmentation: enabled (ten-crop)
+2026-09-27 03:05:09 INFO Saved Weights: every cycle
+2026-09-27 03:05:09 INFO Resumable Checkpoints: every 10 cycles plus the latest completed cycle
+2026-09-27 03:05:09 INFO Precision: fp32
+2026-09-27 03:05:09 INFO Device: cuda:0
+2026-09-27 03:05:09 INFO Execution Mode: eager
+2026-09-27 03:05:09 INFO Dataset CheXpert: train=223,414 val=234 test=668 labels=14
+2026-09-27 03:05:09 INFO ================================================================================
+2026-09-27 03:05:09 INFO Label distribution:
+2026-09-27 03:05:09 INFO Dataset 1/1: CheXpert
+2026-09-27 03:05:09 INFO   Train: 223414 samples
+2026-09-27 03:05:10 INFO     No Finding: positive 22381 (10.0%), negative 0 (0.0%), uncertain 0 (0.0%), missing 201033 (90.0%)
+2026-09-27 03:05:10 INFO     Enlarged Cardiomediastinum: positive 10798 (4.8%), negative 21638 (9.7%), uncertain 12403 (5.6%), missing 178575 (79.9%)
+2026-09-27 03:05:10 INFO     Cardiomegaly: positive 27000 (12.1%), negative 11116 (5.0%), uncertain 8087 (3.6%), missing 177211 (79.3%)
+2026-09-27 03:05:10 INFO     Lung Opacity: positive 105581 (47.3%), negative 6599 (3.0%), uncertain 5598 (2.5%), missing 105636 (47.3%)
+2026-09-27 03:05:10 INFO     Lung Lesion: positive 9186 (4.1%), negative 1270 (0.6%), uncertain 1488 (0.7%), missing 211470 (94.7%)
+2026-09-27 03:05:10 INFO     Edema: positive 52246 (23.4%), negative 20726 (9.3%), uncertain 12984 (5.8%), missing 137458 (61.5%)
+2026-09-27 03:05:10 INFO     Consolidation: positive 14783 (6.6%), negative 28097 (12.6%), uncertain 27742 (12.4%), missing 152792 (68.4%)
+2026-09-27 03:05:10 INFO     Pneumonia: positive 6039 (2.7%), negative 2799 (1.3%), uncertain 18770 (8.4%), missing 195806 (87.6%)
+2026-09-27 03:05:10 INFO     Atelectasis: positive 33376 (14.9%), negative 1328 (0.6%), uncertain 33739 (15.1%), missing 154971 (69.4%)
+2026-09-27 03:05:10 INFO     Pneumothorax: positive 19448 (8.7%), negative 56341 (25.2%), uncertain 3145 (1.4%), missing 144480 (64.7%)
+2026-09-27 03:05:10 INFO     Pleural Effusion: positive 86187 (38.6%), negative 35396 (15.8%), uncertain 11628 (5.2%), missing 90203 (40.4%)
+2026-09-27 03:05:10 INFO     Pleural Other: positive 3523 (1.6%), negative 316 (0.1%), uncertain 2653 (1.2%), missing 216922 (97.1%)
+2026-09-27 03:05:10 INFO     Fracture: positive 9040 (4.0%), negative 2512 (1.1%), uncertain 642 (0.3%), missing 211220 (94.5%)
+2026-09-27 03:05:10 INFO     Support Devices: positive 116001 (51.9%), negative 6137 (2.7%), uncertain 1079 (0.5%), missing 100197 (44.8%)
+2026-09-27 03:05:10 INFO   Validation: 234 samples
+2026-09-27 03:05:10 INFO     No Finding: positive 38 (16.2%), negative 196 (83.8%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Enlarged Cardiomediastinum: positive 109 (46.6%), negative 125 (53.4%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Cardiomegaly: positive 68 (29.1%), negative 166 (70.9%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Lung Opacity: positive 126 (53.8%), negative 108 (46.2%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Lung Lesion: positive 1 (0.4%), negative 233 (99.6%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Edema: positive 45 (19.2%), negative 189 (80.8%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Consolidation: positive 33 (14.1%), negative 201 (85.9%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Pneumonia: positive 8 (3.4%), negative 226 (96.6%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Atelectasis: positive 80 (34.2%), negative 154 (65.8%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Pneumothorax: positive 8 (3.4%), negative 226 (96.6%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Pleural Effusion: positive 67 (28.6%), negative 167 (71.4%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Pleural Other: positive 1 (0.4%), negative 233 (99.6%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Fracture: positive 0 (0.0%), negative 234 (100.0%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Support Devices: positive 107 (45.7%), negative 127 (54.3%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO   Test: 668 samples
+2026-09-27 03:05:10 INFO     No Finding: positive 109 (16.3%), negative 559 (83.7%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Enlarged Cardiomediastinum: positive 298 (44.6%), negative 370 (55.4%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Cardiomegaly: positive 175 (26.2%), negative 493 (73.8%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Lung Opacity: positive 310 (46.4%), negative 358 (53.6%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Lung Lesion: positive 14 (2.1%), negative 654 (97.9%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Edema: positive 85 (12.7%), negative 583 (87.3%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Consolidation: positive 35 (5.2%), negative 633 (94.8%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Pneumonia: positive 14 (2.1%), negative 654 (97.9%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Atelectasis: positive 178 (26.6%), negative 490 (73.4%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Pneumothorax: positive 10 (1.5%), negative 658 (98.5%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Pleural Effusion: positive 120 (18.0%), negative 548 (82.0%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Pleural Other: positive 8 (1.2%), negative 660 (98.8%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Fracture: positive 6 (0.9%), negative 662 (99.1%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO     Support Devices: positive 315 (47.2%), negative 353 (52.8%), uncertain 0 (0.0%), missing 0 (0.0%)
+2026-09-27 03:05:10 INFO Dataset CheXpert: validation/test samples identical = False
+2026-09-27 03:05:12 INFO Removing key ['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask'] from pretrained checkpoint
+2026-09-27 03:05:12 INFO Loaded with msg: _IncompatibleKeys(missing_keys=['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask', 'projector.weight', 'projector.bias', 'omni_heads.0.weight', 'omni_heads.0.bias'], unexpected_keys=[])
+2026-09-27 03:05:14 INFO Removing key ['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask'] from pretrained checkpoint
+2026-09-27 03:05:14 INFO Loaded with msg: _IncompatibleKeys(missing_keys=['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask', 'projector.weight', 'projector.bias', 'omni_heads.0.weight', 'omni_heads.0.bias'], unexpected_keys=[])
+2026-09-27 03:05:14 INFO Student and Teacher are built: they are both swin_base network.
+2026-09-27 03:05:14 INFO Cycle 0001: learning rate = 1.00000000e-04
+2026-09-27 03:05:14 INFO Dataset 1 (CheXpert): momentum = 0.900000, classification/consistency = 1.0000/0.0000 (100.0%/0.0%)
+2026-09-27 03:07:18 INFO Ark+ CheXpert head=0 Cycle=1 g_step=50 [B 50/1118] BT=1.87(2.48) DT=0.00(0.43) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.6049(0.6460) Cls=0.6049(0.6460) [100.0%] Cons=0.2410(0.2140) [0.0%] Elapsed=0:02:09
+2026-09-27 03:09:03 INFO Ark+ CheXpert head=0 Cycle=1 g_step=100 [B 100/1118] BT=1.87(2.29) DT=0.00(0.33) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.5386(0.6079) Cls=0.5386(0.6079) [100.0%] Cons=0.2717(0.2360) [0.0%] Elapsed=0:03:54
+2026-09-27 03:10:51 INFO Ark+ CheXpert head=0 Cycle=1 g_step=150 [B 150/1118] BT=1.88(2.25) DT=0.00(0.32) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4896(0.5760) Cls=0.4896(0.5760) [100.0%] Cons=0.3138(0.2551) [0.0%] Elapsed=0:05:42
+2026-09-27 03:12:39 INFO Ark+ CheXpert head=0 Cycle=1 g_step=200 [B 200/1118] BT=1.87(2.23) DT=0.00(0.31) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4602(0.5503) Cls=0.4602(0.5503) [100.0%] Cons=0.3493(0.2737) [0.0%] Elapsed=0:07:30
+2026-09-27 03:14:27 INFO Ark+ CheXpert head=0 Cycle=1 g_step=250 [B 250/1118] BT=1.88(2.21) DT=0.00(0.31) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4468(0.5299) Cls=0.4468(0.5299) [100.0%] Cons=0.3681(0.2906) [0.0%] Elapsed=0:09:18
+2026-09-27 03:16:12 INFO Ark+ CheXpert head=0 Cycle=1 g_step=300 [B 300/1118] BT=1.87(2.19) DT=0.00(0.29) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4310(0.5142) Cls=0.4310(0.5142) [100.0%] Cons=0.3927(0.3056) [0.0%] Elapsed=0:11:02
+2026-09-27 03:17:56 INFO Ark+ CheXpert head=0 Cycle=1 g_step=350 [B 350/1118] BT=1.87(2.18) DT=0.00(0.28) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4275(0.5020) Cls=0.4275(0.5020) [100.0%] Cons=0.4018(0.3186) [0.0%] Elapsed=0:12:47
+2026-09-27 03:19:42 INFO Ark+ CheXpert head=0 Cycle=1 g_step=400 [B 400/1118] BT=1.88(2.17) DT=0.01(0.28) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4187(0.4921) Cls=0.4187(0.4921) [100.0%] Cons=0.4114(0.3300) [0.0%] Elapsed=0:14:33
+2026-09-27 03:21:30 INFO Ark+ CheXpert head=0 Cycle=1 g_step=450 [B 450/1118] BT=1.87(2.17) DT=0.00(0.28) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4214(0.4841) Cls=0.4214(0.4841) [100.0%] Cons=0.4239(0.3401) [0.0%] Elapsed=0:16:21
+2026-09-27 03:23:16 INFO Ark+ CheXpert head=0 Cycle=1 g_step=500 [B 500/1118] BT=1.87(2.17) DT=0.00(0.28) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4189(0.4778) Cls=0.4189(0.4778) [100.0%] Cons=0.4359(0.3490) [0.0%] Elapsed=0:18:07
+2026-09-27 03:25:03 INFO Ark+ CheXpert head=0 Cycle=1 g_step=550 [B 550/1118] BT=1.87(2.16) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4206(0.4724) Cls=0.4206(0.4724) [100.0%] Cons=0.4397(0.3570) [0.0%] Elapsed=0:19:54
+2026-09-27 03:26:50 INFO Ark+ CheXpert head=0 Cycle=1 g_step=600 [B 600/1118] BT=1.87(2.16) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4075(0.4677) Cls=0.4075(0.4677) [100.0%] Cons=0.4440(0.3640) [0.0%] Elapsed=0:21:40
+2026-09-27 03:28:37 INFO Ark+ CheXpert head=0 Cycle=1 g_step=650 [B 650/1118] BT=1.87(2.16) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4170(0.4638) Cls=0.4170(0.4638) [100.0%] Cons=0.4445(0.3704) [0.0%] Elapsed=0:23:28
+2026-09-27 03:30:25 INFO Ark+ CheXpert head=0 Cycle=1 g_step=700 [B 700/1118] BT=1.87(2.16) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4045(0.4602) Cls=0.4045(0.4602) [100.0%] Cons=0.4490(0.3760) [0.0%] Elapsed=0:25:16
+2026-09-27 03:32:13 INFO Ark+ CheXpert head=0 Cycle=1 g_step=750 [B 750/1118] BT=1.87(2.16) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4102(0.4571) Cls=0.4102(0.4571) [100.0%] Cons=0.4475(0.3811) [0.0%] Elapsed=0:27:03
+2026-09-27 03:34:00 INFO Ark+ CheXpert head=0 Cycle=1 g_step=800 [B 800/1118] BT=1.88(2.16) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4217(0.4546) Cls=0.4217(0.4546) [100.0%] Cons=0.4582(0.3858) [0.0%] Elapsed=0:28:51
+2026-09-27 03:35:47 INFO Ark+ CheXpert head=0 Cycle=1 g_step=850 [B 850/1118] BT=1.87(2.16) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4178(0.4521) Cls=0.4178(0.4521) [100.0%] Cons=0.4534(0.3900) [0.0%] Elapsed=0:30:38
+2026-09-27 03:37:31 INFO Ark+ CheXpert head=0 Cycle=1 g_step=900 [B 900/1118] BT=1.87(2.15) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4019(0.4501) Cls=0.4019(0.4501) [100.0%] Cons=0.4603(0.3938) [0.0%] Elapsed=0:32:21
+2026-09-27 03:39:16 INFO Ark+ CheXpert head=0 Cycle=1 g_step=950 [B 950/1118] BT=1.87(2.15) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4264(0.4482) Cls=0.4264(0.4482) [100.0%] Cons=0.4656(0.3972) [0.0%] Elapsed=0:34:07
+2026-09-27 03:41:02 INFO Ark+ CheXpert head=0 Cycle=1 g_step=1000 [B 1000/1118] BT=1.87(2.15) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4186(0.4464) Cls=0.4186(0.4464) [100.0%] Cons=0.4587(0.4005) [0.0%] Elapsed=0:35:53
+2026-09-27 03:42:51 INFO Ark+ CheXpert head=0 Cycle=1 g_step=1050 [B 1050/1118] BT=1.87(2.15) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4089(0.4448) Cls=0.4089(0.4448) [100.0%] Cons=0.4570(0.4035) [0.0%] Elapsed=0:37:42
+2026-09-27 03:44:38 INFO Ark+ CheXpert head=0 Cycle=1 g_step=1100 [B 1100/1118] BT=1.87(2.15) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4133(0.4434) Cls=0.4133(0.4434) [100.0%] Cons=0.4651(0.4062) [0.0%] Elapsed=0:39:29
+2026-09-27 03:45:13 INFO Ark+ CheXpert head=0 Cycle=1 g_step=1118 [B 1118/1118] BT=0.69(2.15) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3730(0.4429) Cls=0.3730(0.4429) [100.0%] Cons=0.4636(0.4071) [0.0%] Elapsed=0:40:04
+2026-09-27 03:45:13 INFO Finished CheXpert Cycle=1: Loss=0.4429 Cls=0.4429 [100.0%] Cons=0.4071 [0.0%] m=0.90000
+2026-09-27 03:45:13 INFO Evaluating student and teacher test sets at after_CheXpert in Cycle 1
+2026-09-27 03:46:09 INFO Test after_CheXpert CheXpert: student_mean_auroc=0.558226 teacher_mean_auroc=0.540350
+2026-09-27 03:46:09 INFO Test summary after_CheXpert Cycle=1: Student=[np.float64(0.5582264976551168)] Teacher=[np.float64(0.5403499729635671)]
+2026-09-27 03:46:09 INFO Evaluating student and teacher validation sets at after_CheXpert in Cycle 1
+2026-09-27 03:46:39 INFO Validation after_CheXpert CheXpert: student_loss=0.457504 teacher_loss=0.671920 student_mean_auroc=0.551011 teacher_mean_auroc=0.561879
+2026-09-27 03:46:39 INFO Validation summary after_CheXpert Cycle=1: student_losses=[0.45750378492550975] teacher_losses=[0.6719202195477282] student_mean_aurocs=[np.float64(0.5510108587245381)] teacher_mean_aurocs=[np.float64(0.5618785556933267)]
+2026-09-27 03:46:42 INFO Cycle 0002: learning rate = 6.21052632e-04
+2026-09-27 03:46:42 INFO Dataset 1 (CheXpert): momentum = 0.900006, classification/consistency = 1.0000/0.0000 (100.0%/0.0%)
+2026-09-27 03:48:54 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1168 [B 50/1118] BT=2.58(2.66) DT=0.71(0.78) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3992(0.4109) Cls=0.3992(0.4109) [100.0%] Cons=0.4383(0.4348) [0.0%] Elapsed=0:43:45
+2026-09-27 03:50:52 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1218 [B 100/1118] BT=1.87(2.50) DT=0.00(0.63) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.4040(0.4093) Cls=0.4040(0.4093) [100.0%] Cons=0.4387(0.4389) [0.0%] Elapsed=0:45:43
+2026-09-27 03:52:47 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1268 [B 150/1118] BT=1.87(2.44) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.4159(0.4092) Cls=0.4159(0.4092) [100.0%] Cons=0.4426(0.4398) [0.0%] Elapsed=0:47:38
+2026-09-27 03:54:42 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1318 [B 200/1118] BT=1.87(2.40) DT=0.00(0.53) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.4051(0.4095) Cls=0.4051(0.4095) [100.0%] Cons=0.4457(0.4399) [0.0%] Elapsed=0:49:33
+2026-09-27 03:56:43 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1368 [B 250/1118] BT=5.02(2.41) DT=3.14(0.53) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3987(0.4088) Cls=0.3987(0.4088) [100.0%] Cons=0.4564(0.4414) [0.0%] Elapsed=0:51:34
+2026-09-27 03:58:42 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1418 [B 300/1118] BT=1.87(2.40) DT=0.00(0.53) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.4077(0.4080) Cls=0.4077(0.4080) [100.0%] Cons=0.4484(0.4429) [0.0%] Elapsed=0:53:32
+2026-09-27 04:00:39 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1468 [B 350/1118] BT=1.87(2.39) DT=0.00(0.52) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3957(0.4070) Cls=0.3957(0.4070) [100.0%] Cons=0.4573(0.4451) [0.0%] Elapsed=0:55:30
+2026-09-27 04:02:37 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1518 [B 400/1118] BT=1.87(2.39) DT=0.00(0.51) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3963(0.4064) Cls=0.3963(0.4064) [100.0%] Cons=0.4657(0.4473) [0.0%] Elapsed=0:57:27
+2026-09-27 04:04:37 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1568 [B 450/1118] BT=5.06(2.39) DT=3.18(0.52) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3974(0.4059) Cls=0.3974(0.4059) [100.0%] Cons=0.4696(0.4495) [0.0%] Elapsed=0:59:27
+2026-09-27 04:06:35 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1618 [B 500/1118] BT=1.87(2.39) DT=0.00(0.51) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3978(0.4053) Cls=0.3978(0.4052) [100.0%] Cons=0.4730(0.4519) [0.0%] Elapsed=1:01:26
+2026-09-27 04:08:31 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1668 [B 550/1118] BT=1.87(2.38) DT=0.00(0.51) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.4040(0.4047) Cls=0.4040(0.4047) [100.0%] Cons=0.4775(0.4541) [0.0%] Elapsed=1:03:22
+2026-09-27 04:10:26 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1718 [B 600/1118] BT=1.87(2.37) DT=0.00(0.50) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3972(0.4045) Cls=0.3972(0.4045) [100.0%] Cons=0.4680(0.4563) [0.0%] Elapsed=1:05:17
+2026-09-27 04:12:25 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1768 [B 650/1118] BT=5.59(2.37) DT=3.70(0.50) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3909(0.4041) Cls=0.3909(0.4041) [100.0%] Cons=0.4847(0.4583) [0.0%] Elapsed=1:07:16
+2026-09-27 04:14:20 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1818 [B 700/1118] BT=1.87(2.37) DT=0.00(0.50) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3896(0.4034) Cls=0.3896(0.4034) [100.0%] Cons=0.4933(0.4605) [0.0%] Elapsed=1:09:11
+2026-09-27 04:16:15 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1868 [B 750/1118] BT=1.90(2.36) DT=0.00(0.49) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3915(0.4030) Cls=0.3915(0.4030) [100.0%] Cons=0.5033(0.4626) [0.0%] Elapsed=1:11:06
+2026-09-27 04:18:11 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1918 [B 800/1118] BT=1.87(2.36) DT=0.00(0.49) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3956(0.4025) Cls=0.3956(0.4025) [100.0%] Cons=0.4946(0.4648) [0.0%] Elapsed=1:13:02
+2026-09-27 04:20:11 INFO Ark+ CheXpert head=0 Cycle=2 g_step=1968 [B 850/1118] BT=5.35(2.36) DT=3.46(0.49) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3925(0.4021) Cls=0.3925(0.4021) [100.0%] Cons=0.5012(0.4669) [0.0%] Elapsed=1:15:02
+2026-09-27 04:22:06 INFO Ark+ CheXpert head=0 Cycle=2 g_step=2018 [B 900/1118] BT=1.87(2.36) DT=0.00(0.49) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3778(0.4017) Cls=0.3778(0.4017) [100.0%] Cons=0.4999(0.4688) [0.0%] Elapsed=1:16:57
+2026-09-27 04:24:04 INFO Ark+ CheXpert head=0 Cycle=2 g_step=2068 [B 950/1118] BT=1.87(2.36) DT=0.00(0.49) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3923(0.4013) Cls=0.3923(0.4013) [100.0%] Cons=0.5058(0.4707) [0.0%] Elapsed=1:18:55
+2026-09-27 04:26:00 INFO Ark+ CheXpert head=0 Cycle=2 g_step=2118 [B 1000/1118] BT=1.87(2.36) DT=0.00(0.48) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3976(0.4009) Cls=0.3976(0.4008) [100.0%] Cons=0.5042(0.4725) [0.0%] Elapsed=1:20:51
+2026-09-27 04:28:04 INFO Ark+ CheXpert head=0 Cycle=2 g_step=2168 [B 1050/1118] BT=6.09(2.36) DT=4.21(0.49) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3906(0.4005) Cls=0.3906(0.4005) [100.0%] Cons=0.5229(0.4743) [0.0%] Elapsed=1:22:55
+2026-09-27 04:30:01 INFO Ark+ CheXpert head=0 Cycle=2 g_step=2218 [B 1100/1118] BT=1.87(2.36) DT=0.00(0.49) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.4021(0.4001) Cls=0.4021(0.4001) [100.0%] Cons=0.5194(0.4761) [0.0%] Elapsed=1:24:52
+2026-09-27 04:30:38 INFO Ark+ CheXpert head=0 Cycle=2 g_step=2236 [B 1118/1118] BT=0.16(2.36) DT=0.00(0.49) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3705(0.3999) Cls=0.3705(0.3999) [100.0%] Cons=0.5020(0.4767) [0.0%] Elapsed=1:25:29
+2026-09-27 04:30:38 INFO Finished CheXpert Cycle=2: Loss=0.3999 Cls=0.3999 [100.0%] Cons=0.4767 [0.0%] m=0.90001
+2026-09-27 04:30:38 INFO Evaluating student and teacher test sets at after_CheXpert in Cycle 2
+2026-09-27 04:31:28 INFO Test after_CheXpert CheXpert: student_mean_auroc=0.756069 teacher_mean_auroc=0.547368
+2026-09-27 04:31:28 INFO Test summary after_CheXpert Cycle=2: Student=[np.float64(0.7560693665921266)] Teacher=[np.float64(0.5473680068810414)]
+2026-09-27 04:31:28 INFO Evaluating student and teacher validation sets at after_CheXpert in Cycle 2
+2026-09-27 04:31:58 INFO Validation after_CheXpert CheXpert: student_loss=0.411750 teacher_loss=0.668209 student_mean_auroc=0.678202 teacher_mean_auroc=0.524114
+2026-09-27 04:31:58 INFO Validation summary after_CheXpert Cycle=2: student_losses=[0.41174994956733835] teacher_losses=[0.6682087896216629] student_mean_aurocs=[np.float64(0.678202449430884)] teacher_mean_aurocs=[np.float64(0.5241135266716463)]
+2026-09-27 04:32:01 INFO Cycle 0003: learning rate = 1.14210526e-03
+2026-09-27 04:32:01 INFO Dataset 1 (CheXpert): momentum = 0.900025, classification/consistency = 0.9999/0.0001 (100.0%/0.0%)
+2026-09-27 04:34:02 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2286 [B 50/1118] BT=1.87(2.43) DT=0.00(0.55) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3773(0.3900) Cls=0.3773(0.3900) [100.0%] Cons=0.4957(0.4871) [0.0%] Elapsed=1:28:53
+2026-09-27 04:35:48 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2336 [B 100/1118] BT=1.87(2.27) DT=0.00(0.39) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3800(0.3909) Cls=0.3800(0.3908) [100.0%] Cons=0.4958(0.4903) [0.0%] Elapsed=1:30:38
+2026-09-27 04:37:32 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2386 [B 150/1118] BT=1.87(2.21) DT=0.00(0.33) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3779(0.3907) Cls=0.3779(0.3906) [100.0%] Cons=0.4917(0.4931) [0.0%] Elapsed=1:32:22
+2026-09-27 04:39:20 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2436 [B 200/1118] BT=1.87(2.19) DT=0.00(0.32) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3949(0.3902) Cls=0.3949(0.3902) [100.0%] Cons=0.5070(0.4960) [0.0%] Elapsed=1:34:10
+2026-09-27 04:41:26 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2486 [B 250/1118] BT=1.87(2.26) DT=0.00(0.39) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3977(0.3898) Cls=0.3977(0.3898) [100.0%] Cons=0.5163(0.4985) [0.0%] Elapsed=1:36:16
+2026-09-27 04:43:12 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2536 [B 300/1118] BT=1.87(2.24) DT=0.00(0.37) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3902(0.3897) Cls=0.3902(0.3897) [100.0%] Cons=0.5178(0.4999) [0.0%] Elapsed=1:38:03
+2026-09-27 04:45:00 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2586 [B 350/1118] BT=1.87(2.23) DT=0.00(0.36) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3971(0.3898) Cls=0.3971(0.3898) [100.0%] Cons=0.5143(0.5022) [0.0%] Elapsed=1:39:51
+2026-09-27 04:46:48 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2636 [B 400/1118] BT=1.87(2.22) DT=0.00(0.35) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3912(0.3895) Cls=0.3912(0.3895) [100.0%] Cons=0.5375(0.5046) [0.0%] Elapsed=1:41:38
+2026-09-27 04:48:38 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2686 [B 450/1118] BT=1.87(2.22) DT=0.00(0.34) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3920(0.3891) Cls=0.3919(0.3891) [100.0%] Cons=0.5249(0.5071) [0.0%] Elapsed=1:43:29
+2026-09-27 04:50:27 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2736 [B 500/1118] BT=1.87(2.21) DT=0.00(0.34) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3826(0.3888) Cls=0.3826(0.3888) [100.0%] Cons=0.5390(0.5089) [0.0%] Elapsed=1:45:18
+2026-09-27 04:52:15 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2786 [B 550/1118] BT=1.87(2.21) DT=0.00(0.34) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3831(0.3886) Cls=0.3831(0.3886) [100.0%] Cons=0.5339(0.5109) [0.0%] Elapsed=1:47:06
+2026-09-27 04:54:02 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2836 [B 600/1118] BT=1.87(2.20) DT=0.00(0.33) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3907(0.3885) Cls=0.3906(0.3885) [100.0%] Cons=0.5324(0.5127) [0.0%] Elapsed=1:48:53
+2026-09-27 04:55:52 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2886 [B 650/1118] BT=1.87(2.20) DT=0.00(0.33) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3916(0.3882) Cls=0.3916(0.3882) [100.0%] Cons=0.5421(0.5145) [0.0%] Elapsed=1:50:43
+2026-09-27 04:57:40 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2936 [B 700/1118] BT=1.87(2.20) DT=0.00(0.33) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3803(0.3880) Cls=0.3803(0.3879) [100.0%] Cons=0.5519(0.5165) [0.0%] Elapsed=1:52:31
+2026-09-27 04:59:28 INFO Ark+ CheXpert head=0 Cycle=3 g_step=2986 [B 750/1118] BT=1.87(2.20) DT=0.00(0.32) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3869(0.3878) Cls=0.3869(0.3878) [100.0%] Cons=0.5429(0.5184) [0.0%] Elapsed=1:54:19
+2026-09-27 05:01:15 INFO Ark+ CheXpert head=0 Cycle=3 g_step=3036 [B 800/1118] BT=1.87(2.19) DT=0.00(0.32) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3944(0.3876) Cls=0.3944(0.3876) [100.0%] Cons=0.5570(0.5206) [0.0%] Elapsed=1:56:06
+2026-09-27 05:03:06 INFO Ark+ CheXpert head=0 Cycle=3 g_step=3086 [B 850/1118] BT=1.87(2.19) DT=0.00(0.32) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3763(0.3874) Cls=0.3763(0.3874) [100.0%] Cons=0.5562(0.5225) [0.0%] Elapsed=1:57:57
+2026-09-27 05:04:54 INFO Ark+ CheXpert head=0 Cycle=3 g_step=3136 [B 900/1118] BT=1.90(2.19) DT=0.00(0.32) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3947(0.3873) Cls=0.3947(0.3873) [100.0%] Cons=0.5443(0.5245) [0.0%] Elapsed=1:59:44
+2026-09-27 05:06:41 INFO Ark+ CheXpert head=0 Cycle=3 g_step=3186 [B 950/1118] BT=1.87(2.19) DT=0.00(0.32) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3747(0.3872) Cls=0.3746(0.3871) [100.0%] Cons=0.5586(0.5266) [0.0%] Elapsed=2:01:32
+2026-09-27 05:08:26 INFO Ark+ CheXpert head=0 Cycle=3 g_step=3236 [B 1000/1118] BT=1.87(2.19) DT=0.00(0.31) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3823(0.3871) Cls=0.3823(0.3871) [100.0%] Cons=0.5556(0.5283) [0.0%] Elapsed=2:03:17
+2026-09-27 05:10:14 INFO Ark+ CheXpert head=0 Cycle=3 g_step=3286 [B 1050/1118] BT=1.87(2.18) DT=0.00(0.31) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3882(0.3868) Cls=0.3882(0.3868) [100.0%] Cons=0.5798(0.5303) [0.0%] Elapsed=2:05:05
+2026-09-27 05:12:01 INFO Ark+ CheXpert head=0 Cycle=3 g_step=3336 [B 1100/1118] BT=1.87(2.18) DT=0.00(0.31) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3627(0.3865) Cls=0.3627(0.3865) [100.0%] Cons=0.5663(0.5323) [0.0%] Elapsed=2:06:52
+2026-09-27 05:12:35 INFO Ark+ CheXpert head=0 Cycle=3 g_step=3354 [B 1118/1118] BT=0.17(2.18) DT=0.00(0.31) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3770(0.3865) Cls=0.3769(0.3865) [100.0%] Cons=0.5687(0.5328) [0.0%] Elapsed=2:07:26
+2026-09-27 05:12:36 INFO Finished CheXpert Cycle=3: Loss=0.3865 Cls=0.3865 [100.0%] Cons=0.5328 [0.0%] m=0.90002
+2026-09-27 05:12:36 INFO Evaluating student and teacher test sets at after_CheXpert in Cycle 3
+2026-09-27 05:13:24 INFO Test after_CheXpert CheXpert: student_mean_auroc=0.816337 teacher_mean_auroc=0.561765
+2026-09-27 05:13:24 INFO Test summary after_CheXpert Cycle=3: Student=[np.float64(0.8163371648753273)] Teacher=[np.float64(0.5617653450139797)]
+2026-09-27 05:13:24 INFO Evaluating student and teacher validation sets at after_CheXpert in Cycle 3
+2026-09-27 05:13:52 INFO Validation after_CheXpert CheXpert: student_loss=0.392549 teacher_loss=0.656941 student_mean_auroc=0.687319 teacher_mean_auroc=0.503552
+2026-09-27 05:13:52 INFO Validation summary after_CheXpert Cycle=3: student_losses=[0.3925493805326967] teacher_losses=[0.6569414688990667] student_mean_aurocs=[np.float64(0.6873191411735395)] teacher_mean_aurocs=[np.float64(0.503551716174333)]
+2026-09-27 05:13:54 INFO Cycle 0004: learning rate = 1.66315789e-03
+2026-09-27 05:13:54 INFO Dataset 1 (CheXpert): momentum = 0.900056, classification/consistency = 0.9997/0.0003 (100.0%/0.0%)
+2026-09-27 05:15:58 INFO Ark+ CheXpert head=0 Cycle=4 g_step=3404 [B 50/1118] BT=1.87(2.47) DT=0.00(0.60) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3873(0.3825) Cls=0.3872(0.3825) [100.0%] Cons=0.5428(0.5433) [0.0%] Elapsed=2:10:48
+2026-09-27 05:17:44 INFO Ark+ CheXpert head=0 Cycle=4 g_step=3454 [B 100/1118] BT=1.87(2.30) DT=0.00(0.43) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3819(0.3825) Cls=0.3819(0.3824) [100.0%] Cons=0.5377(0.5454) [0.0%] Elapsed=2:12:35
+2026-09-27 05:19:31 INFO Ark+ CheXpert head=0 Cycle=4 g_step=3504 [B 150/1118] BT=1.87(2.24) DT=0.00(0.37) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3859(0.3813) Cls=0.3858(0.3812) [100.0%] Cons=0.5526(0.5472) [0.0%] Elapsed=2:14:21
+2026-09-27 05:21:17 INFO Ark+ CheXpert head=0 Cycle=4 g_step=3554 [B 200/1118] BT=1.87(2.22) DT=0.00(0.34) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3920(0.3807) Cls=0.3919(0.3806) [100.0%] Cons=0.5626(0.5492) [0.0%] Elapsed=2:16:08
+2026-09-27 05:23:06 INFO Ark+ CheXpert head=0 Cycle=4 g_step=3604 [B 250/1118] BT=1.87(2.21) DT=0.00(0.34) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3766(0.3807) Cls=0.3766(0.3806) [100.0%] Cons=0.5510(0.5500) [0.0%] Elapsed=2:17:57
+2026-09-27 05:24:53 INFO Ark+ CheXpert head=0 Cycle=4 g_step=3654 [B 300/1118] BT=1.87(2.20) DT=0.00(0.32) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3923(0.3806) Cls=0.3922(0.3806) [100.0%] Cons=0.5517(0.5514) [0.0%] Elapsed=2:19:44
+2026-09-27 05:26:41 INFO Ark+ CheXpert head=0 Cycle=4 g_step=3704 [B 350/1118] BT=1.87(2.19) DT=0.00(0.32) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3852(0.3809) Cls=0.3852(0.3809) [100.0%] Cons=0.5519(0.5512) [0.0%] Elapsed=2:21:32
+2026-09-27 05:28:28 INFO Ark+ CheXpert head=0 Cycle=4 g_step=3754 [B 400/1118] BT=1.90(2.19) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3670(0.3803) Cls=0.3669(0.3803) [100.0%] Cons=0.5584(0.5523) [0.0%] Elapsed=2:23:19
+2026-09-27 05:30:18 INFO Ark+ CheXpert head=0 Cycle=4 g_step=3804 [B 450/1118] BT=1.87(2.19) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3915(0.3802) Cls=0.3914(0.3802) [100.0%] Cons=0.5557(0.5539) [0.0%] Elapsed=2:25:08
+2026-09-27 05:32:03 INFO Ark+ CheXpert head=0 Cycle=4 g_step=3854 [B 500/1118] BT=1.87(2.18) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3745(0.3800) Cls=0.3744(0.3800) [100.0%] Cons=0.5671(0.5552) [0.0%] Elapsed=2:26:54
+2026-09-27 05:33:51 INFO Ark+ CheXpert head=0 Cycle=4 g_step=3904 [B 550/1118] BT=1.87(2.18) DT=0.00(0.30) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3817(0.3798) Cls=0.3816(0.3798) [100.0%] Cons=0.5778(0.5567) [0.0%] Elapsed=2:28:42
+2026-09-27 05:35:39 INFO Ark+ CheXpert head=0 Cycle=4 g_step=3954 [B 600/1118] BT=1.87(2.18) DT=0.00(0.30) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3609(0.3797) Cls=0.3609(0.3796) [100.0%] Cons=0.5634(0.5575) [0.0%] Elapsed=2:30:30
+2026-09-27 05:37:30 INFO Ark+ CheXpert head=0 Cycle=4 g_step=4004 [B 650/1118] BT=2.36(2.18) DT=0.49(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3838(0.3795) Cls=0.3837(0.3794) [100.0%] Cons=0.5690(0.5588) [0.0%] Elapsed=2:32:21
+2026-09-27 05:39:20 INFO Ark+ CheXpert head=0 Cycle=4 g_step=4054 [B 700/1118] BT=1.88(2.18) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3605(0.3793) Cls=0.3604(0.3792) [100.0%] Cons=0.5838(0.5596) [0.0%] Elapsed=2:34:10
+2026-09-27 05:41:08 INFO Ark+ CheXpert head=0 Cycle=4 g_step=4104 [B 750/1118] BT=1.87(2.18) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3659(0.3792) Cls=0.3659(0.3792) [100.0%] Cons=0.5663(0.5608) [0.0%] Elapsed=2:35:59
+2026-09-27 05:42:59 INFO Ark+ CheXpert head=0 Cycle=4 g_step=4154 [B 800/1118] BT=1.87(2.18) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3940(0.3789) Cls=0.3940(0.3789) [100.0%] Cons=0.5809(0.5623) [0.0%] Elapsed=2:37:50
+2026-09-27 05:44:51 INFO Ark+ CheXpert head=0 Cycle=4 g_step=4204 [B 850/1118] BT=1.87(2.18) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3725(0.3789) Cls=0.3724(0.3788) [100.0%] Cons=0.5714(0.5634) [0.0%] Elapsed=2:39:41
+2026-09-27 05:46:40 INFO Ark+ CheXpert head=0 Cycle=4 g_step=4254 [B 900/1118] BT=1.88(2.18) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3694(0.3788) Cls=0.3694(0.3787) [100.0%] Cons=0.5704(0.5641) [0.0%] Elapsed=2:41:31
+2026-09-27 05:48:30 INFO Ark+ CheXpert head=0 Cycle=4 g_step=4304 [B 950/1118] BT=1.87(2.19) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3853(0.3787) Cls=0.3852(0.3786) [100.0%] Cons=0.5802(0.5649) [0.0%] Elapsed=2:43:21
+2026-09-27 05:50:20 INFO Ark+ CheXpert head=0 Cycle=4 g_step=4354 [B 1000/1118] BT=1.87(2.19) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3793(0.3785) Cls=0.3792(0.3785) [100.0%] Cons=0.5826(0.5657) [0.0%] Elapsed=2:45:11
+2026-09-27 05:52:08 INFO Ark+ CheXpert head=0 Cycle=4 g_step=4404 [B 1050/1118] BT=1.87(2.18) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3683(0.3784) Cls=0.3683(0.3784) [100.0%] Cons=0.5731(0.5663) [0.0%] Elapsed=2:46:59
+2026-09-27 05:53:59 INFO Ark+ CheXpert head=0 Cycle=4 g_step=4454 [B 1100/1118] BT=1.87(2.19) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3658(0.3783) Cls=0.3657(0.3782) [100.0%] Cons=0.5979(0.5670) [0.0%] Elapsed=2:48:50
+2026-09-27 05:54:34 INFO Ark+ CheXpert head=0 Cycle=4 g_step=4472 [B 1118/1118] BT=0.16(2.18) DT=0.00(0.31) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3767(0.3783) Cls=0.3767(0.3782) [100.0%] Cons=0.6058(0.5675) [0.0%] Elapsed=2:49:24
+2026-09-27 05:54:34 INFO Finished CheXpert Cycle=4: Loss=0.3783 Cls=0.3782 [100.0%] Cons=0.5675 [0.0%] m=0.90006
+2026-09-27 05:54:34 INFO Evaluating student and teacher test sets at after_CheXpert in Cycle 4
+2026-09-27 05:55:23 INFO Test after_CheXpert CheXpert: student_mean_auroc=0.838783 teacher_mean_auroc=0.584286
+2026-09-27 05:55:23 INFO Test summary after_CheXpert Cycle=4: Student=[np.float64(0.8387832114076541)] Teacher=[np.float64(0.5842857760208651)]
+2026-09-27 05:55:23 INFO Evaluating student and teacher validation sets at after_CheXpert in Cycle 4
+2026-09-27 05:55:51 INFO Validation after_CheXpert CheXpert: student_loss=0.382404 teacher_loss=0.637864 student_mean_auroc=0.698251 teacher_mean_auroc=0.511357
+2026-09-27 05:55:51 INFO Validation summary after_CheXpert Cycle=4: student_losses=[0.3824039516795395] teacher_losses=[0.6378643451592861] student_mean_aurocs=[np.float64(0.6982514584661218)] teacher_mean_aurocs=[np.float64(0.5113568752061572)]
+2026-09-27 05:55:54 INFO Cycle 0005: learning rate = 2.18421053e-03
+2026-09-27 05:55:54 INFO Dataset 1 (CheXpert): momentum = 0.900099, classification/consistency = 0.9995/0.0005 (100.0%/0.0%)
+2026-09-27 05:57:57 INFO Ark+ CheXpert head=0 Cycle=5 g_step=4522 [B 50/1118] BT=1.87(2.46) DT=0.00(0.58) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3642(0.3761) Cls=0.3641(0.3760) [99.9%] Cons=0.5451(0.5470) [0.1%] Elapsed=2:52:48
+2026-09-27 05:59:45 INFO Ark+ CheXpert head=0 Cycle=5 g_step=4572 [B 100/1118] BT=1.87(2.31) DT=0.00(0.43) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3905(0.3748) Cls=0.3904(0.3747) [99.9%] Cons=0.5442(0.5485) [0.1%] Elapsed=2:54:36
+2026-09-27 06:01:32 INFO Ark+ CheXpert head=0 Cycle=5 g_step=4622 [B 150/1118] BT=1.87(2.25) DT=0.00(0.38) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3818(0.3756) Cls=0.3818(0.3755) [99.9%] Cons=0.5440(0.5472) [0.1%] Elapsed=2:56:23
+2026-09-27 06:03:20 INFO Ark+ CheXpert head=0 Cycle=5 g_step=4672 [B 200/1118] BT=1.87(2.23) DT=0.00(0.35) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3770(0.3752) Cls=0.3769(0.3751) [99.9%] Cons=0.5502(0.5470) [0.1%] Elapsed=2:58:10
+2026-09-27 06:05:12 INFO Ark+ CheXpert head=0 Cycle=5 g_step=4722 [B 250/1118] BT=1.87(2.23) DT=0.00(0.36) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3787(0.3745) Cls=0.3786(0.3744) [99.9%] Cons=0.5591(0.5486) [0.1%] Elapsed=3:00:02
+2026-09-27 06:07:00 INFO Ark+ CheXpert head=0 Cycle=5 g_step=4772 [B 300/1118] BT=1.87(2.22) DT=0.00(0.34) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3776(0.3741) Cls=0.3775(0.3740) [99.9%] Cons=0.5578(0.5499) [0.1%] Elapsed=3:01:50
+2026-09-27 06:08:47 INFO Ark+ CheXpert head=0 Cycle=5 g_step=4822 [B 350/1118] BT=1.87(2.21) DT=0.00(0.34) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3730(0.3740) Cls=0.3729(0.3739) [99.9%] Cons=0.5380(0.5497) [0.1%] Elapsed=3:03:38
+2026-09-27 06:10:35 INFO Ark+ CheXpert head=0 Cycle=5 g_step=4872 [B 400/1118] BT=1.87(2.20) DT=0.00(0.33) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3730(0.3737) Cls=0.3729(0.3736) [99.9%] Cons=0.5653(0.5500) [0.1%] Elapsed=3:05:26
+2026-09-27 06:12:25 INFO Ark+ CheXpert head=0 Cycle=5 g_step=4922 [B 450/1118] BT=1.88(2.20) DT=0.00(0.33) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3737(0.3737) Cls=0.3736(0.3736) [99.9%] Cons=0.5578(0.5509) [0.1%] Elapsed=3:07:16
+2026-09-27 06:14:14 INFO Ark+ CheXpert head=0 Cycle=5 g_step=4972 [B 500/1118] BT=1.87(2.20) DT=0.00(0.33) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3580(0.3735) Cls=0.3579(0.3735) [99.9%] Cons=0.5551(0.5513) [0.1%] Elapsed=3:09:05
+2026-09-27 06:16:03 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5022 [B 550/1118] BT=1.87(2.20) DT=0.00(0.32) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3574(0.3735) Cls=0.3573(0.3734) [99.9%] Cons=0.5496(0.5510) [0.1%] Elapsed=3:10:53
+2026-09-27 06:17:52 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5072 [B 600/1118] BT=1.87(2.20) DT=0.00(0.32) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3747(0.3733) Cls=0.3746(0.3733) [99.9%] Cons=0.5477(0.5512) [0.1%] Elapsed=3:12:43
+2026-09-27 06:19:43 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5122 [B 650/1118] BT=1.87(2.20) DT=0.00(0.33) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3750(0.3732) Cls=0.3749(0.3732) [99.9%] Cons=0.5471(0.5514) [0.1%] Elapsed=3:14:33
+2026-09-27 06:21:33 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5172 [B 700/1118] BT=1.87(2.20) DT=0.00(0.32) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3652(0.3729) Cls=0.3651(0.3728) [99.9%] Cons=0.5600(0.5519) [0.1%] Elapsed=3:16:23
+2026-09-27 06:23:21 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5222 [B 750/1118] BT=1.87(2.20) DT=0.00(0.32) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3655(0.3728) Cls=0.3654(0.3727) [99.9%] Cons=0.5471(0.5521) [0.1%] Elapsed=3:18:12
+2026-09-27 06:25:10 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5272 [B 800/1118] BT=1.87(2.19) DT=0.00(0.32) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3821(0.3727) Cls=0.3821(0.3726) [99.9%] Cons=0.5390(0.5517) [0.1%] Elapsed=3:20:01
+2026-09-27 06:26:59 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5322 [B 850/1118] BT=1.87(2.19) DT=0.00(0.32) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3530(0.3724) Cls=0.3529(0.3724) [99.9%] Cons=0.5401(0.5508) [0.1%] Elapsed=3:21:50
+2026-09-27 06:28:50 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5372 [B 900/1118] BT=1.87(2.19) DT=0.00(0.32) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3502(0.3723) Cls=0.3502(0.3722) [99.9%] Cons=0.5343(0.5499) [0.1%] Elapsed=3:23:40
+2026-09-27 06:30:38 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5422 [B 950/1118] BT=1.87(2.19) DT=0.00(0.32) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3783(0.3722) Cls=0.3783(0.3721) [99.9%] Cons=0.5426(0.5496) [0.1%] Elapsed=3:25:28
+2026-09-27 06:32:25 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5472 [B 1000/1118] BT=1.88(2.19) DT=0.00(0.32) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3623(0.3721) Cls=0.3622(0.3720) [99.9%] Cons=0.5496(0.5495) [0.1%] Elapsed=3:27:16
+2026-09-27 06:34:17 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5522 [B 1050/1118] BT=1.87(2.19) DT=0.00(0.32) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3585(0.3719) Cls=0.3584(0.3718) [99.9%] Cons=0.5501(0.5493) [0.1%] Elapsed=3:29:08
+2026-09-27 06:36:05 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5572 [B 1100/1118] BT=1.87(2.19) DT=0.00(0.32) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3565(0.3719) Cls=0.3564(0.3718) [99.9%] Cons=0.5408(0.5493) [0.1%] Elapsed=3:30:56
+2026-09-27 06:36:39 INFO Ark+ CheXpert head=0 Cycle=5 g_step=5590 [B 1118/1118] BT=0.16(2.19) DT=0.00(0.32) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.3911(0.3718) Cls=0.3911(0.3717) [99.9%] Cons=0.5328(0.5492) [0.1%] Elapsed=3:31:30
+2026-09-27 06:36:39 INFO Finished CheXpert Cycle=5: Loss=0.3718 Cls=0.3717 [99.9%] Cons=0.5492 [0.1%] m=0.90010
+2026-09-27 06:36:39 INFO Evaluating student and teacher test sets at after_CheXpert in Cycle 5
+2026-09-27 06:37:29 INFO Test after_CheXpert CheXpert: student_mean_auroc=0.853031 teacher_mean_auroc=0.622451
+2026-09-27 06:37:29 INFO Test summary after_CheXpert Cycle=5: Student=[np.float64(0.8530312168988203)] Teacher=[np.float64(0.6224509710240574)]
+2026-09-27 06:37:29 INFO Evaluating student and teacher validation sets at after_CheXpert in Cycle 5
+2026-09-27 06:37:57 INFO Validation after_CheXpert CheXpert: student_loss=0.371088 teacher_loss=0.613030 student_mean_auroc=0.722947 teacher_mean_auroc=0.530429
+2026-09-27 06:37:57 INFO Validation summary after_CheXpert Cycle=5: student_losses=[0.37108827299541897] teacher_losses=[0.6130302645202376] student_mean_aurocs=[np.float64(0.7229470508804811)] teacher_mean_aurocs=[np.float64(0.5304294729454415)]
+2026-09-27 06:38:00 INFO Cycle 0006: learning rate = 2.70526316e-03
+2026-09-27 06:38:00 INFO Dataset 1 (CheXpert): momentum = 0.900154, classification/consistency = 0.9992/0.0008 (99.9%/0.1%)
+2026-09-27 06:40:02 INFO Ark+ CheXpert head=0 Cycle=6 g_step=5640 [B 50/1118] BT=1.87(2.45) DT=0.00(0.57) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3702(0.3713) Cls=0.3701(0.3712) [99.9%] Cons=0.5128(0.5097) [0.1%] Elapsed=3:34:53
+2026-09-27 06:41:49 INFO Ark+ CheXpert head=0 Cycle=6 g_step=5690 [B 100/1118] BT=1.87(2.29) DT=0.00(0.42) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3757(0.3692) Cls=0.3755(0.3691) [99.9%] Cons=0.5147(0.5139) [0.1%] Elapsed=3:36:40
+2026-09-27 06:43:36 INFO Ark+ CheXpert head=0 Cycle=6 g_step=5740 [B 150/1118] BT=1.87(2.24) DT=0.00(0.37) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3757(0.3694) Cls=0.3756(0.3693) [99.9%] Cons=0.5177(0.5148) [0.1%] Elapsed=3:38:26
+2026-09-27 06:45:25 INFO Ark+ CheXpert head=0 Cycle=6 g_step=5790 [B 200/1118] BT=1.87(2.23) DT=0.00(0.35) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3795(0.3696) Cls=0.3794(0.3695) [99.9%] Cons=0.5108(0.5151) [0.1%] Elapsed=3:40:16
+2026-09-27 06:47:16 INFO Ark+ CheXpert head=0 Cycle=6 g_step=5840 [B 250/1118] BT=2.82(2.22) DT=0.95(0.35) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3727(0.3694) Cls=0.3725(0.3693) [99.9%] Cons=0.5165(0.5156) [0.1%] Elapsed=3:42:06
+2026-09-27 06:49:04 INFO Ark+ CheXpert head=0 Cycle=6 g_step=5890 [B 300/1118] BT=1.87(2.21) DT=0.00(0.34) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3758(0.3690) Cls=0.3757(0.3689) [99.9%] Cons=0.4922(0.5146) [0.1%] Elapsed=3:43:55
+2026-09-27 06:50:53 INFO Ark+ CheXpert head=0 Cycle=6 g_step=5940 [B 350/1118] BT=1.87(2.21) DT=0.00(0.34) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3664(0.3685) Cls=0.3663(0.3684) [99.9%] Cons=0.4984(0.5133) [0.1%] Elapsed=3:45:44
+2026-09-27 06:52:42 INFO Ark+ CheXpert head=0 Cycle=6 g_step=5990 [B 400/1118] BT=1.87(2.21) DT=0.00(0.33) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3770(0.3686) Cls=0.3769(0.3684) [99.9%] Cons=0.5045(0.5123) [0.1%] Elapsed=3:47:33
+2026-09-27 06:54:32 INFO Ark+ CheXpert head=0 Cycle=6 g_step=6040 [B 450/1118] BT=4.64(2.20) DT=2.76(0.33) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3574(0.3683) Cls=0.3572(0.3682) [99.9%] Cons=0.5075(0.5114) [0.1%] Elapsed=3:49:23
+2026-09-27 06:56:20 INFO Ark+ CheXpert head=0 Cycle=6 g_step=6090 [B 500/1118] BT=1.87(2.20) DT=0.00(0.33) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3654(0.3682) Cls=0.3653(0.3681) [99.9%] Cons=0.5057(0.5106) [0.1%] Elapsed=3:51:10
+2026-09-27 06:58:08 INFO Ark+ CheXpert head=0 Cycle=6 g_step=6140 [B 550/1118] BT=1.87(2.20) DT=0.00(0.32) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3573(0.3678) Cls=0.3572(0.3677) [99.9%] Cons=0.4922(0.5086) [0.1%] Elapsed=3:52:59
+2026-09-27 06:59:54 INFO Ark+ CheXpert head=0 Cycle=6 g_step=6190 [B 600/1118] BT=1.87(2.19) DT=0.00(0.32) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3537(0.3678) Cls=0.3536(0.3677) [99.9%] Cons=0.4938(0.5072) [0.1%] Elapsed=3:54:45
+2026-09-27 07:01:45 INFO Ark+ CheXpert head=0 Cycle=6 g_step=6240 [B 650/1118] BT=3.63(2.19) DT=1.74(0.32) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3667(0.3678) Cls=0.3666(0.3677) [99.9%] Cons=0.4869(0.5056) [0.1%] Elapsed=3:56:36
+2026-09-27 07:03:34 INFO Ark+ CheXpert head=0 Cycle=6 g_step=6290 [B 700/1118] BT=1.87(2.19) DT=0.00(0.32) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.3778(0.3676) Cls=0.3777(0.3675) [99.9%] Cons=0.5137(0.5053) [0.1%] Elapsed=3:58:25

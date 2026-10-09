@@ -1,0 +1,71 @@
+2026-09-10 19:09:05 INFO ================================================================================
+2026-09-10 19:09:05 INFO ARK+ PRETRAINING CONFIGURATION
+2026-09-10 19:09:05 INFO ================================================================================
+2026-09-10 19:09:05 INFO Run Name: vindr_cxr_only
+2026-09-10 19:09:05 INFO Seed: 999
+2026-09-10 19:09:05 INFO Output Directory: /workspace/vindr_cxr_only_seed_999
+2026-09-10 19:09:05 INFO Backbone: swin_base
+2026-09-10 19:09:05 INFO Initialization: imagenet
+2026-09-10 19:09:05 INFO Pretrained Weights: True
+2026-09-10 19:09:05 INFO Projector Features: 1376
+2026-09-10 19:09:05 INFO Datasets: ['VinDrCXR']
+2026-09-10 19:09:05 INFO Class Counts: [6]
+2026-09-10 19:09:05 INFO Global Batch Size: 200
+2026-09-10 19:09:05 INFO Per-rank Batch Size: 200
+2026-09-10 19:09:05 INFO Distributed World Size: 1
+2026-09-10 19:09:05 INFO Data Loader Workers Per Rank: 8
+2026-09-10 19:09:05 INFO Cycles: 200
+2026-09-10 19:09:05 INFO Training Strategy: cyclic
+2026-09-10 19:09:05 INFO Optimizer: sgd
+2026-09-10 19:09:05 INFO Initial Learning Rate: 0.0001
+2026-09-10 19:09:05 INFO Peak Learning Rate: 0.01
+2026-09-10 19:09:05 INFO Final Learning Rate: 1e-05
+2026-09-10 19:09:05 INFO Warmup Cycles: 20
+2026-09-10 19:09:05 INFO Teacher Momentum Base: 0.9
+2026-09-10 19:09:05 INFO Teacher EMA Mode: epoch
+2026-09-10 19:09:05 INFO Validation Evaluation: student and teacher after every dataset
+2026-09-10 19:09:05 INFO Test Evaluation: student and teacher after every dataset
+2026-09-10 19:09:05 INFO Train Augmentation: enabled (stochastic student transforms)
+2026-09-10 19:09:05 INFO Test-time Augmentation: enabled (ten-crop)
+2026-09-10 19:09:05 INFO Saved Weights: every cycle
+2026-09-10 19:09:05 INFO Resumable Checkpoints: every 10 cycles plus the latest completed cycle
+2026-09-10 19:09:05 INFO Precision: fp32
+2026-09-10 19:09:05 INFO Device: cuda:0
+2026-09-10 19:09:05 INFO Execution Mode: eager
+2026-09-10 19:09:05 INFO Dataset VinDrCXR: train=15,000 val=3,000 test=3,000 labels=6
+2026-09-10 19:09:05 INFO ================================================================================
+2026-09-10 19:09:05 INFO Label distribution:
+2026-09-10 19:09:05 INFO Dataset 1/1: VinDrCXR
+2026-09-10 19:09:05 INFO   Train: 15000 samples
+2026-09-10 19:09:05 INFO     PE: positive 1038 (6.9%), negative 13962 (93.1%)
+2026-09-10 19:09:05 INFO     Lung tumor: positive 291 (1.9%), negative 14709 (98.1%)
+2026-09-10 19:09:05 INFO     Pneumonia: positive 919 (6.1%), negative 14081 (93.9%)
+2026-09-10 19:09:05 INFO     Tuberculosis: positive 750 (5.0%), negative 14250 (95.0%)
+2026-09-10 19:09:05 INFO     Other diseases: positive 4377 (29.2%), negative 10623 (70.8%)
+2026-09-10 19:09:05 INFO     No finding: positive 10606 (70.7%), negative 4394 (29.3%)
+2026-09-10 19:09:05 INFO   Validation (test split): 3000 samples
+2026-09-10 19:09:05 INFO     PE: positive 111 (3.7%), negative 2889 (96.3%)
+2026-09-10 19:09:05 INFO     Lung tumor: positive 80 (2.7%), negative 2920 (97.3%)
+2026-09-10 19:09:05 INFO     Pneumonia: positive 246 (8.2%), negative 2754 (91.8%)
+2026-09-10 19:09:05 INFO     Tuberculosis: positive 164 (5.5%), negative 2836 (94.5%)
+2026-09-10 19:09:05 INFO     Other diseases: positive 657 (21.9%), negative 2343 (78.1%)
+2026-09-10 19:09:05 INFO     No finding: positive 2051 (68.4%), negative 949 (31.6%)
+2026-09-10 19:09:05 INFO   Test: 3000 samples
+2026-09-10 19:09:05 INFO     PE: positive 111 (3.7%), negative 2889 (96.3%)
+2026-09-10 19:09:05 INFO     Lung tumor: positive 80 (2.7%), negative 2920 (97.3%)
+2026-09-10 19:09:05 INFO     Pneumonia: positive 246 (8.2%), negative 2754 (91.8%)
+2026-09-10 19:09:05 INFO     Tuberculosis: positive 164 (5.5%), negative 2836 (94.5%)
+2026-09-10 19:09:05 INFO     Other diseases: positive 657 (21.9%), negative 2343 (78.1%)
+2026-09-10 19:09:05 INFO     No finding: positive 2051 (68.4%), negative 949 (31.6%)
+2026-09-10 19:09:05 INFO Dataset VinDrCXR: validation/test samples identical = True; test evaluation will also be recorded as validation
+2026-09-10 19:09:11 INFO Removing key ['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask'] from pretrained checkpoint
+2026-09-10 19:09:11 INFO Loaded with msg: _IncompatibleKeys(missing_keys=['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask', 'projector.weight', 'projector.bias', 'omni_heads.0.weight', 'omni_heads.0.bias'], unexpected_keys=[])
+2026-09-10 19:09:13 INFO Removing key ['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask'] from pretrained checkpoint
+2026-09-10 19:09:13 INFO Loaded with msg: _IncompatibleKeys(missing_keys=['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask', 'projector.weight', 'projector.bias', 'omni_heads.0.weight', 'omni_heads.0.bias'], unexpected_keys=[])
+2026-09-10 19:09:13 INFO Student and Teacher are built: they are both swin_base network.
+2026-09-10 19:09:13 INFO Cycle 0001: learning rate = 1.00000000e-04
+2026-09-10 19:09:13 INFO Dataset 1 (VinDrCXR): momentum = 0.900000, classification/consistency = 1.0000/0.0000 (100.0%/0.0%)
+2026-09-10 19:11:17 INFO Ark+ VinDrCXR head=0 Cycle=1 g_step=50 [B 50/75] BT=1.88(2.47) DT=0.00(0.35) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.5339(0.6159) Cls=0.5339(0.6159) [100.0%] Cons=0.2043(0.1837) [0.0%] Elapsed=0:02:17
+2026-09-10 19:12:04 INFO Ark+ VinDrCXR head=0 Cycle=1 g_step=75 [B 75/75] BT=1.87(2.27) DT=0.00(0.24) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4729(0.5777) Cls=0.4729(0.5777) [100.0%] Cons=0.2356(0.1959) [0.0%] Elapsed=0:03:03
+2026-09-10 19:12:04 INFO Finished VinDrCXR Cycle=1: Loss=0.5777 Cls=0.5777 [100.0%] Cons=0.1959 [0.0%] m=0.90000
+2026-09-10 19:12:04 INFO Evaluating student and teacher test sets at after_VinDrCXR in Cycle 1

@@ -1,0 +1,242 @@
+2026-09-29 01:19:23 INFO ================================================================================
+2026-09-29 01:19:23 INFO ARK+ PRETRAINING CONFIGURATION
+2026-09-29 01:19:23 INFO ================================================================================
+2026-09-29 01:19:23 INFO Run Name: mimic_only_centercrop
+2026-09-29 01:19:23 INFO Seed: 100
+2026-09-29 01:19:23 INFO Output Directory: /workspace/mimic_only_centercrop_seed_100
+2026-09-29 01:19:23 INFO Backbone: swin_base
+2026-09-29 01:19:23 INFO Initialization: imagenet
+2026-09-29 01:19:23 INFO Pretrained Weights: True
+2026-09-29 01:19:23 INFO Projector Features: 1376
+2026-09-29 01:19:23 INFO Datasets: ['MIMIC']
+2026-09-29 01:19:23 INFO Class Counts: [14]
+2026-09-29 01:19:23 INFO Global Batch Size: 200
+2026-09-29 01:19:23 INFO Per-rank Batch Size: 200
+2026-09-29 01:19:23 INFO Distributed World Size: 1
+2026-09-29 01:19:23 INFO Data Loader Workers Per Rank: 8
+2026-09-29 01:19:23 INFO Cycles: 200
+2026-09-29 01:19:23 INFO Training Strategy: cyclic
+2026-09-29 01:19:23 INFO Optimizer: sgd
+2026-09-29 01:19:23 INFO Initial Learning Rate: 0.0001
+2026-09-29 01:19:23 INFO Peak Learning Rate: 0.01
+2026-09-29 01:19:23 INFO Final Learning Rate: 1e-05
+2026-09-29 01:19:23 INFO Warmup Cycles: 20
+2026-09-29 01:19:23 INFO Teacher Momentum Base: 0.9
+2026-09-29 01:19:23 INFO Teacher EMA Mode: epoch
+2026-09-29 01:19:23 INFO Validation Evaluation: student and teacher after every dataset
+2026-09-29 01:19:23 INFO Test Evaluation: student and teacher after every dataset
+2026-09-29 01:19:23 INFO Train Augmentation: enabled (stochastic student transforms)
+2026-09-29 01:19:23 INFO Test-time Augmentation: disabled (center crop)
+2026-09-29 01:19:23 INFO Saved Weights: every cycle
+2026-09-29 01:19:23 INFO Resumable Checkpoints: every 10 cycles plus the latest completed cycle
+2026-09-29 01:19:23 INFO Precision: fp32
+2026-09-29 01:19:23 INFO Device: cuda:0
+2026-09-29 01:19:23 INFO Execution Mode: eager
+2026-09-29 01:19:23 INFO Dataset MIMIC: train=368,960 val=2,991 test=5,159 labels=14
+2026-09-29 01:19:23 INFO ================================================================================
+2026-09-29 01:19:23 INFO Label distribution:
+2026-09-29 01:19:23 INFO Dataset 1/1: MIMIC
+2026-09-29 01:19:23 INFO   Train: 368960 samples
+2026-09-29 01:19:24 INFO     Atelectasis: positive 63485 (17.2%), negative 2207 (0.6%), uncertain 15108 (4.1%), missing 288160 (78.1%)
+2026-09-29 01:19:24 INFO     Cardiomegaly: positive 62554 (17.0%), negative 24501 (6.6%), uncertain 8214 (2.2%), missing 273691 (74.2%)
+2026-09-29 01:19:24 INFO     Consolidation: positive 14236 (3.9%), negative 13916 (3.8%), uncertain 6285 (1.7%), missing 334523 (90.7%)
+2026-09-29 01:19:24 INFO     Edema: positive 35279 (9.6%), negative 40087 (10.9%), uncertain 18821 (5.1%), missing 274773 (74.5%)
+2026-09-29 01:19:24 INFO     Enlarged Cardiomediastinum: positive 9752 (2.6%), negative 8510 (2.3%), uncertain 12174 (3.3%), missing 338524 (91.8%)
+2026-09-29 01:19:24 INFO     Fracture: positive 7404 (2.0%), negative 1738 (0.5%), uncertain 1041 (0.3%), missing 358777 (97.2%)
+2026-09-29 01:19:24 INFO     Lung Lesion: positive 10490 (2.8%), negative 1679 (0.5%), uncertain 1978 (0.5%), missing 354813 (96.2%)
+2026-09-29 01:19:24 INFO     Lung Opacity: positive 74302 (20.1%), negative 4987 (1.4%), uncertain 5757 (1.6%), missing 283914 (76.9%)
+2026-09-29 01:19:24 INFO     No Finding: positive 141239 (38.3%), negative 0 (0.0%), uncertain 0 (0.0%), missing 227721 (61.7%)
+2026-09-29 01:19:24 INFO     Pleural Effusion: positive 74745 (20.3%), negative 42455 (11.5%), uncertain 8341 (2.3%), missing 243419 (66.0%)
+2026-09-29 01:19:24 INFO     Pleural Other: positive 3319 (0.9%), negative 249 (0.1%), uncertain 1360 (0.4%), missing 364032 (98.7%)
+2026-09-29 01:19:24 INFO     Pneumonia: positive 25489 (6.9%), negative 42568 (11.5%), uncertain 28369 (7.7%), missing 272534 (73.9%)
+2026-09-29 01:19:24 INFO     Pneumothorax: positive 14001 (3.8%), negative 56244 (15.2%), uncertain 1523 (0.4%), missing 297192 (80.5%)
+2026-09-29 01:19:24 INFO     Support Devices: positive 81890 (22.2%), negative 5060 (1.4%), uncertain 350 (0.1%), missing 281660 (76.3%)
+2026-09-29 01:19:24 INFO   Validation: 2991 samples
+2026-09-29 01:19:24 INFO     Atelectasis: positive 528 (17.7%), negative 13 (0.4%), uncertain 143 (4.8%), missing 2307 (77.1%)
+2026-09-29 01:19:24 INFO     Cardiomegaly: positive 534 (17.9%), negative 206 (6.9%), uncertain 91 (3.0%), missing 2160 (72.2%)
+2026-09-29 01:19:24 INFO     Consolidation: positive 113 (3.8%), negative 97 (3.2%), uncertain 71 (2.4%), missing 2710 (90.6%)
+2026-09-29 01:19:24 INFO     Edema: positive 326 (10.9%), negative 322 (10.8%), uncertain 152 (5.1%), missing 2191 (73.3%)
+2026-09-29 01:19:24 INFO     Enlarged Cardiomediastinum: positive 90 (3.0%), negative 89 (3.0%), uncertain 124 (4.1%), missing 2688 (89.9%)
+2026-09-29 01:19:24 INFO     Fracture: positive 34 (1.1%), negative 12 (0.4%), uncertain 5 (0.2%), missing 2940 (98.3%)
+2026-09-29 01:19:24 INFO     Lung Lesion: positive 109 (3.6%), negative 13 (0.4%), uncertain 14 (0.5%), missing 2855 (95.5%)
+2026-09-29 01:19:24 INFO     Lung Opacity: positive 560 (18.7%), negative 30 (1.0%), uncertain 36 (1.2%), missing 2365 (79.1%)
+2026-09-29 01:19:24 INFO     No Finding: positive 1129 (37.7%), negative 0 (0.0%), uncertain 0 (0.0%), missing 1862 (62.3%)
+2026-09-29 01:19:24 INFO     Pleural Effusion: positive 670 (22.4%), negative 328 (11.0%), uncertain 74 (2.5%), missing 1919 (64.2%)
+2026-09-29 01:19:24 INFO     Pleural Other: positive 22 (0.7%), negative 0 (0.0%), uncertain 11 (0.4%), missing 2958 (98.9%)
+2026-09-29 01:19:24 INFO     Pneumonia: positive 194 (6.5%), negative 301 (10.1%), uncertain 216 (7.2%), missing 2280 (76.2%)
+2026-09-29 01:19:24 INFO     Pneumothorax: positive 112 (3.7%), negative 485 (16.2%), uncertain 12 (0.4%), missing 2382 (79.6%)
+2026-09-29 01:19:24 INFO     Support Devices: positive 726 (24.3%), negative 47 (1.6%), uncertain 5 (0.2%), missing 2213 (74.0%)
+2026-09-29 01:19:24 INFO   Test: 5159 samples
+2026-09-29 01:19:24 INFO     Atelectasis: positive 1034 (20.0%), negative 27 (0.5%), uncertain 285 (5.5%), missing 3813 (73.9%)
+2026-09-29 01:19:24 INFO     Cardiomegaly: positive 1258 (24.4%), negative 259 (5.0%), uncertain 164 (3.2%), missing 3478 (67.4%)
+2026-09-29 01:19:24 INFO     Consolidation: positive 326 (6.3%), negative 186 (3.6%), uncertain 147 (2.8%), missing 4500 (87.2%)
+2026-09-29 01:19:24 INFO     Edema: positive 959 (18.6%), negative 510 (9.9%), uncertain 436 (8.5%), missing 3254 (63.1%)
+2026-09-29 01:19:24 INFO     Enlarged Cardiomediastinum: positive 200 (3.9%), negative 107 (2.1%), uncertain 287 (5.6%), missing 4565 (88.5%)
+2026-09-29 01:19:24 INFO     Fracture: positive 167 (3.2%), negative 5 (0.1%), uncertain 7 (0.1%), missing 4980 (96.5%)
+2026-09-29 01:19:24 INFO     Lung Lesion: positive 202 (3.9%), negative 27 (0.5%), uncertain 35 (0.7%), missing 4895 (94.9%)
+2026-09-29 01:19:24 INFO     Lung Opacity: positive 1561 (30.3%), negative 89 (1.7%), uncertain 123 (2.4%), missing 3386 (65.6%)
+2026-09-29 01:19:24 INFO     No Finding: positive 984 (19.1%), negative 0 (0.0%), uncertain 0 (0.0%), missing 4175 (80.9%)
+2026-09-29 01:19:24 INFO     Pleural Effusion: positive 1542 (29.9%), negative 563 (10.9%), uncertain 172 (3.3%), missing 2882 (55.9%)
+2026-09-29 01:19:24 INFO     Pleural Other: positive 119 (2.3%), negative 0 (0.0%), uncertain 26 (0.5%), missing 5014 (97.2%)
+2026-09-29 01:19:24 INFO     Pneumonia: positive 539 (10.4%), negative 489 (9.5%), uncertain 565 (11.0%), missing 3566 (69.1%)
+2026-09-29 01:19:24 INFO     Pneumothorax: positive 144 (2.8%), negative 990 (19.2%), uncertain 27 (0.5%), missing 3998 (77.5%)
+2026-09-29 01:19:24 INFO     Support Devices: positive 1457 (28.2%), negative 52 (1.0%), uncertain 6 (0.1%), missing 3644 (70.6%)
+2026-09-29 01:19:24 INFO Dataset MIMIC: validation/test samples identical = False
+2026-09-29 01:19:27 INFO Removing key ['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask'] from pretrained checkpoint
+2026-09-29 01:19:27 INFO Loaded with msg: _IncompatibleKeys(missing_keys=['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask', 'projector.weight', 'projector.bias', 'omni_heads.0.weight', 'omni_heads.0.bias'], unexpected_keys=[])
+2026-09-29 01:19:28 INFO Removing key ['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask'] from pretrained checkpoint
+2026-09-29 01:19:28 INFO Loaded with msg: _IncompatibleKeys(missing_keys=['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask', 'projector.weight', 'projector.bias', 'omni_heads.0.weight', 'omni_heads.0.bias'], unexpected_keys=[])
+2026-09-29 01:19:29 INFO Student and Teacher are built: they are both swin_base network.
+2026-09-29 01:19:29 INFO Cycle 0001: learning rate = 1.00000000e-04
+2026-09-29 01:19:29 INFO Dataset 1 (MIMIC): momentum = 0.900000, classification/consistency = 1.0000/0.0000 (100.0%/0.0%)
+2026-09-29 01:21:33 INFO Ark+ MIMIC head=0 Cycle=1 g_step=50 [B 50/1845] BT=1.87(2.49) DT=0.00(0.42) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.5941(0.6427) Cls=0.5941(0.6427) [100.0%] Cons=0.2517(0.2196) [0.0%] Elapsed=0:02:10
+2026-09-29 01:23:19 INFO Ark+ MIMIC head=0 Cycle=1 g_step=100 [B 100/1845] BT=1.87(2.30) DT=0.00(0.33) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.5195(0.5995) Cls=0.5195(0.5995) [100.0%] Cons=0.2836(0.2397) [0.0%] Elapsed=0:03:56
+2026-09-29 01:25:03 INFO Ark+ MIMIC head=0 Cycle=1 g_step=150 [B 150/1845] BT=1.87(2.23) DT=0.00(0.29) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4612(0.5617) Cls=0.4612(0.5617) [100.0%] Cons=0.3227(0.2603) [0.0%] Elapsed=0:05:41
+2026-09-29 01:26:51 INFO Ark+ MIMIC head=0 Cycle=1 g_step=200 [B 200/1845] BT=1.87(2.21) DT=0.00(0.29) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4232(0.5306) Cls=0.4232(0.5306) [100.0%] Cons=0.3531(0.2805) [0.0%] Elapsed=0:07:28
+2026-09-29 01:28:40 INFO Ark+ MIMIC head=0 Cycle=1 g_step=250 [B 250/1845] BT=1.87(2.21) DT=0.00(0.29) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3994(0.5057) Cls=0.3994(0.5057) [100.0%] Cons=0.3892(0.2993) [0.0%] Elapsed=0:09:17
+2026-09-29 01:30:26 INFO Ark+ MIMIC head=0 Cycle=1 g_step=300 [B 300/1845] BT=1.87(2.19) DT=0.00(0.29) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3866(0.4858) Cls=0.3866(0.4858) [100.0%] Cons=0.4115(0.3162) [0.0%] Elapsed=0:11:04
+2026-09-29 01:32:11 INFO Ark+ MIMIC head=0 Cycle=1 g_step=350 [B 350/1845] BT=1.87(2.18) DT=0.00(0.28) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3985(0.4706) Cls=0.3985(0.4706) [100.0%] Cons=0.4267(0.3314) [0.0%] Elapsed=0:12:48
+2026-09-29 01:33:56 INFO Ark+ MIMIC head=0 Cycle=1 g_step=400 [B 400/1845] BT=1.87(2.17) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3649(0.4586) Cls=0.3649(0.4586) [100.0%] Cons=0.4449(0.3449) [0.0%] Elapsed=0:14:34
+2026-09-29 01:35:43 INFO Ark+ MIMIC head=0 Cycle=1 g_step=450 [B 450/1845] BT=1.87(2.17) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3519(0.4485) Cls=0.3519(0.4485) [100.0%] Cons=0.4556(0.3573) [0.0%] Elapsed=0:16:21
+2026-09-29 01:37:31 INFO Ark+ MIMIC head=0 Cycle=1 g_step=500 [B 500/1845] BT=1.87(2.16) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3590(0.4401) Cls=0.3590(0.4401) [100.0%] Cons=0.4694(0.3681) [0.0%] Elapsed=0:18:08
+2026-09-29 01:39:15 INFO Ark+ MIMIC head=0 Cycle=1 g_step=550 [B 550/1845] BT=1.87(2.16) DT=0.00(0.27) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3654(0.4331) Cls=0.3654(0.4331) [100.0%] Cons=0.4768(0.3778) [0.0%] Elapsed=0:19:53
+2026-09-29 01:41:00 INFO Ark+ MIMIC head=0 Cycle=1 g_step=600 [B 600/1845] BT=1.87(2.15) DT=0.00(0.26) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3646(0.4272) Cls=0.3646(0.4272) [100.0%] Cons=0.4841(0.3866) [0.0%] Elapsed=0:21:37
+2026-09-29 01:42:46 INFO Ark+ MIMIC head=0 Cycle=1 g_step=650 [B 650/1845] BT=1.87(2.15) DT=0.00(0.26) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3690(0.4220) Cls=0.3690(0.4220) [100.0%] Cons=0.4930(0.3946) [0.0%] Elapsed=0:23:23
+2026-09-29 01:44:31 INFO Ark+ MIMIC head=0 Cycle=1 g_step=700 [B 700/1845] BT=1.87(2.15) DT=0.00(0.26) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3520(0.4176) Cls=0.3520(0.4176) [100.0%] Cons=0.4932(0.4018) [0.0%] Elapsed=0:25:09
+2026-09-29 01:46:18 INFO Ark+ MIMIC head=0 Cycle=1 g_step=750 [B 750/1845] BT=1.87(2.15) DT=0.00(0.26) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3722(0.4138) Cls=0.3722(0.4138) [100.0%] Cons=0.5011(0.4083) [0.0%] Elapsed=0:26:55
+2026-09-29 01:48:03 INFO Ark+ MIMIC head=0 Cycle=1 g_step=800 [B 800/1845] BT=1.87(2.14) DT=0.00(0.26) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3588(0.4104) Cls=0.3588(0.4104) [100.0%] Cons=0.5090(0.4142) [0.0%] Elapsed=0:28:40
+2026-09-29 01:49:49 INFO Ark+ MIMIC head=0 Cycle=1 g_step=850 [B 850/1845] BT=1.87(2.14) DT=0.00(0.26) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3569(0.4073) Cls=0.3569(0.4073) [100.0%] Cons=0.5018(0.4195) [0.0%] Elapsed=0:30:26
+2026-09-29 01:51:36 INFO Ark+ MIMIC head=0 Cycle=1 g_step=900 [B 900/1845] BT=1.87(2.14) DT=0.00(0.26) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3763(0.4045) Cls=0.3763(0.4045) [100.0%] Cons=0.5184(0.4245) [0.0%] Elapsed=0:32:13
+2026-09-29 01:53:21 INFO Ark+ MIMIC head=0 Cycle=1 g_step=950 [B 950/1845] BT=1.87(2.14) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3548(0.4020) Cls=0.3548(0.4020) [100.0%] Cons=0.5111(0.4291) [0.0%] Elapsed=0:33:58
+2026-09-29 01:55:07 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1000 [B 1000/1845] BT=1.87(2.14) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3499(0.3997) Cls=0.3499(0.3997) [100.0%] Cons=0.5131(0.4334) [0.0%] Elapsed=0:35:44
+2026-09-29 01:56:54 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1050 [B 1050/1845] BT=1.91(2.14) DT=0.00(0.26) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3440(0.3976) Cls=0.3440(0.3976) [100.0%] Cons=0.5106(0.4374) [0.0%] Elapsed=0:37:31
+2026-09-29 01:58:43 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1100 [B 1100/1845] BT=1.87(2.14) DT=0.00(0.26) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3743(0.3957) Cls=0.3743(0.3957) [100.0%] Cons=0.5171(0.4410) [0.0%] Elapsed=0:39:21
+2026-09-29 02:00:30 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1150 [B 1150/1845] BT=1.87(2.14) DT=0.00(0.26) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3604(0.3939) Cls=0.3604(0.3939) [100.0%] Cons=0.5252(0.4445) [0.0%] Elapsed=0:41:08
+2026-09-29 02:02:14 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1200 [B 1200/1845] BT=1.87(2.14) DT=0.00(0.26) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3446(0.3925) Cls=0.3446(0.3925) [100.0%] Cons=0.5204(0.4477) [0.0%] Elapsed=0:42:52
+2026-09-29 02:03:59 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1250 [B 1250/1845] BT=1.87(2.14) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3590(0.3908) Cls=0.3590(0.3908) [100.0%] Cons=0.5192(0.4506) [0.0%] Elapsed=0:44:36
+2026-09-29 02:05:46 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1300 [B 1300/1845] BT=1.87(2.14) DT=0.00(0.26) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3706(0.3895) Cls=0.3706(0.3895) [100.0%] Cons=0.5186(0.4533) [0.0%] Elapsed=0:46:23
+2026-09-29 02:07:32 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1350 [B 1350/1845] BT=1.87(2.14) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3628(0.3881) Cls=0.3628(0.3881) [100.0%] Cons=0.5161(0.4559) [0.0%] Elapsed=0:48:09
+2026-09-29 02:09:18 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1400 [B 1400/1845] BT=1.87(2.14) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3346(0.3868) Cls=0.3346(0.3868) [100.0%] Cons=0.5284(0.4584) [0.0%] Elapsed=0:49:55
+2026-09-29 02:11:03 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1450 [B 1450/1845] BT=1.87(2.13) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3743(0.3856) Cls=0.3743(0.3856) [100.0%] Cons=0.5269(0.4608) [0.0%] Elapsed=0:51:40
+2026-09-29 02:12:51 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1500 [B 1500/1845] BT=1.87(2.13) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3472(0.3845) Cls=0.3472(0.3845) [100.0%] Cons=0.5310(0.4629) [0.0%] Elapsed=0:53:28
+2026-09-29 02:14:36 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1550 [B 1550/1845] BT=1.87(2.13) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3383(0.3833) Cls=0.3383(0.3833) [100.0%] Cons=0.5295(0.4649) [0.0%] Elapsed=0:55:13
+2026-09-29 02:16:19 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1600 [B 1600/1845] BT=1.87(2.13) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3714(0.3821) Cls=0.3714(0.3821) [100.0%] Cons=0.5331(0.4669) [0.0%] Elapsed=0:56:56
+2026-09-29 02:18:03 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1650 [B 1650/1845] BT=1.87(2.13) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3376(0.3812) Cls=0.3376(0.3812) [100.0%] Cons=0.5350(0.4688) [0.0%] Elapsed=0:58:40
+2026-09-29 02:19:51 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1700 [B 1700/1845] BT=1.87(2.13) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3429(0.3803) Cls=0.3429(0.3803) [100.0%] Cons=0.5311(0.4707) [0.0%] Elapsed=1:00:28
+2026-09-29 02:21:35 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1750 [B 1750/1845] BT=1.87(2.13) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3333(0.3794) Cls=0.3333(0.3794) [100.0%] Cons=0.5322(0.4724) [0.0%] Elapsed=1:02:13
+2026-09-29 02:23:22 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1800 [B 1800/1845] BT=1.87(2.13) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3376(0.3786) Cls=0.3376(0.3786) [100.0%] Cons=0.5407(0.4741) [0.0%] Elapsed=1:04:00
+2026-09-29 02:24:55 INFO Ark+ MIMIC head=0 Cycle=1 g_step=1845 [B 1845/1845] BT=2.25(2.13) DT=0.00(0.25) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.3547(0.3778) Cls=0.3547(0.3778) [100.0%] Cons=0.5377(0.4756) [0.0%] Elapsed=1:05:32
+2026-09-29 02:24:55 INFO Finished MIMIC Cycle=1: Loss=0.3778 Cls=0.3778 [100.0%] Cons=0.4756 [0.0%] m=0.90000
+2026-09-29 02:24:55 INFO Evaluating student and teacher test sets at after_MIMIC in Cycle 1
+2026-09-29 02:26:37 INFO Test after_MIMIC MIMIC: student_mean_auroc=0.574369 teacher_mean_auroc=0.487193
+2026-09-29 02:26:37 INFO Test summary after_MIMIC Cycle=1: Student=[np.float64(0.5743691782895389)] Teacher=[np.float64(0.48719302300129425)]
+2026-09-29 02:26:37 INFO Evaluating student and teacher validation sets at after_MIMIC in Cycle 1
+2026-09-29 02:27:45 INFO Validation after_MIMIC MIMIC: student_loss=0.347155 teacher_loss=0.677248 student_mean_auroc=0.628978 teacher_mean_auroc=0.493346
+2026-09-29 02:27:45 INFO Validation summary after_MIMIC Cycle=1: student_losses=[0.3471548097243639] teacher_losses=[0.6772482315061563] student_mean_aurocs=[np.float64(0.6289782638875488)] teacher_mean_aurocs=[np.float64(0.4933456269527937)]
+2026-09-29 02:27:49 INFO Cycle 0002: learning rate = 6.21052632e-04
+2026-09-29 02:27:49 INFO Dataset 1 (MIMIC): momentum = 0.900006, classification/consistency = 1.0000/0.0000 (100.0%/0.0%)
+2026-09-29 02:30:07 INFO Ark+ MIMIC head=0 Cycle=2 g_step=1895 [B 50/1845] BT=3.07(2.77) DT=1.20(0.89) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3284(0.3459) Cls=0.3284(0.3459) [100.0%] Cons=0.5148(0.5090) [0.0%] Elapsed=1:10:44
+2026-09-29 02:32:07 INFO Ark+ MIMIC head=0 Cycle=2 g_step=1945 [B 100/1845] BT=1.87(2.58) DT=0.00(0.71) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3693(0.3473) Cls=0.3693(0.3473) [100.0%] Cons=0.5122(0.5104) [0.0%] Elapsed=1:12:44
+2026-09-29 02:34:08 INFO Ark+ MIMIC head=0 Cycle=2 g_step=1995 [B 150/1845] BT=1.87(2.53) DT=0.00(0.66) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3263(0.3453) Cls=0.3263(0.3453) [100.0%] Cons=0.5193(0.5124) [0.0%] Elapsed=1:14:46
+2026-09-29 02:36:08 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2045 [B 200/1845] BT=1.87(2.50) DT=0.00(0.62) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3391(0.3442) Cls=0.3391(0.3442) [100.0%] Cons=0.5255(0.5159) [0.0%] Elapsed=1:16:46
+2026-09-29 02:38:13 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2095 [B 250/1845] BT=1.87(2.50) DT=0.00(0.62) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3308(0.3420) Cls=0.3308(0.3420) [100.0%] Cons=0.5417(0.5195) [0.0%] Elapsed=1:18:50
+2026-09-29 02:40:15 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2145 [B 300/1845] BT=1.87(2.49) DT=0.00(0.61) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3091(0.3405) Cls=0.3091(0.3405) [100.0%] Cons=0.5394(0.5237) [0.0%] Elapsed=1:20:52
+2026-09-29 02:42:14 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2195 [B 350/1845] BT=1.87(2.47) DT=0.00(0.60) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3344(0.3395) Cls=0.3344(0.3395) [100.0%] Cons=0.5496(0.5276) [0.0%] Elapsed=1:22:51
+2026-09-29 02:44:14 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2245 [B 400/1845] BT=1.87(2.46) DT=0.00(0.59) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3267(0.3389) Cls=0.3267(0.3389) [100.0%] Cons=0.5662(0.5311) [0.0%] Elapsed=1:24:51
+2026-09-29 02:46:20 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2295 [B 450/1845] BT=1.87(2.47) DT=0.00(0.60) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3424(0.3378) Cls=0.3424(0.3378) [100.0%] Cons=0.5660(0.5345) [0.0%] Elapsed=1:26:57
+2026-09-29 02:48:21 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2345 [B 500/1845] BT=1.87(2.46) DT=0.00(0.59) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3372(0.3369) Cls=0.3372(0.3369) [100.0%] Cons=0.5607(0.5379) [0.0%] Elapsed=1:28:58
+2026-09-29 02:50:19 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2395 [B 550/1845] BT=1.87(2.46) DT=0.00(0.58) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3149(0.3361) Cls=0.3149(0.3361) [100.0%] Cons=0.5655(0.5398) [0.0%] Elapsed=1:30:56
+2026-09-29 02:52:20 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2445 [B 600/1845] BT=1.87(2.45) DT=0.00(0.58) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3377(0.3355) Cls=0.3377(0.3355) [100.0%] Cons=0.5677(0.5422) [0.0%] Elapsed=1:32:57
+2026-09-29 02:54:24 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2495 [B 650/1845] BT=1.87(2.45) DT=0.00(0.58) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3250(0.3348) Cls=0.3250(0.3348) [100.0%] Cons=0.5762(0.5440) [0.0%] Elapsed=1:35:01
+2026-09-29 02:56:24 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2545 [B 700/1845] BT=1.87(2.45) DT=0.00(0.58) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3137(0.3344) Cls=0.3137(0.3344) [100.0%] Cons=0.5566(0.5454) [0.0%] Elapsed=1:37:01
+2026-09-29 02:58:24 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2595 [B 750/1845] BT=1.87(2.45) DT=0.00(0.57) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3327(0.3338) Cls=0.3327(0.3338) [100.0%] Cons=0.5707(0.5466) [0.0%] Elapsed=1:39:01
+2026-09-29 03:00:25 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2645 [B 800/1845] BT=1.87(2.45) DT=0.00(0.57) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3160(0.3332) Cls=0.3160(0.3331) [100.0%] Cons=0.5721(0.5481) [0.0%] Elapsed=1:41:02
+2026-09-29 03:02:29 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2695 [B 850/1845] BT=1.87(2.45) DT=0.00(0.57) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3340(0.3326) Cls=0.3340(0.3326) [100.0%] Cons=0.5662(0.5493) [0.0%] Elapsed=1:43:06
+2026-09-29 03:04:28 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2745 [B 900/1845] BT=1.87(2.44) DT=0.00(0.57) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3139(0.3324) Cls=0.3138(0.3324) [100.0%] Cons=0.5685(0.5506) [0.0%] Elapsed=1:45:05
+2026-09-29 03:06:29 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2795 [B 950/1845] BT=1.87(2.44) DT=0.00(0.57) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3306(0.3319) Cls=0.3306(0.3318) [100.0%] Cons=0.5710(0.5515) [0.0%] Elapsed=1:47:06
+2026-09-29 03:08:29 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2845 [B 1000/1845] BT=1.87(2.44) DT=0.00(0.57) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3071(0.3314) Cls=0.3071(0.3314) [100.0%] Cons=0.5826(0.5527) [0.0%] Elapsed=1:49:07
+2026-09-29 03:10:32 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2895 [B 1050/1845] BT=1.87(2.44) DT=0.00(0.57) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3016(0.3309) Cls=0.3016(0.3309) [100.0%] Cons=0.5848(0.5540) [0.0%] Elapsed=1:51:10
+2026-09-29 03:12:32 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2945 [B 1100/1845] BT=1.87(2.44) DT=0.00(0.57) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3195(0.3306) Cls=0.3195(0.3306) [100.0%] Cons=0.5868(0.5554) [0.0%] Elapsed=1:53:10
+2026-09-29 03:14:31 INFO Ark+ MIMIC head=0 Cycle=2 g_step=2995 [B 1150/1845] BT=1.87(2.44) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3217(0.3303) Cls=0.3217(0.3303) [100.0%] Cons=0.5846(0.5566) [0.0%] Elapsed=1:55:08
+2026-09-29 03:16:32 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3045 [B 1200/1845] BT=1.87(2.44) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3308(0.3300) Cls=0.3308(0.3300) [100.0%] Cons=0.5847(0.5578) [0.0%] Elapsed=1:57:09
+2026-09-29 03:18:36 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3095 [B 1250/1845] BT=1.87(2.44) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3243(0.3297) Cls=0.3243(0.3297) [100.0%] Cons=0.5768(0.5586) [0.0%] Elapsed=1:59:13
+2026-09-29 03:20:36 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3145 [B 1300/1845] BT=1.87(2.44) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3029(0.3295) Cls=0.3029(0.3295) [100.0%] Cons=0.5832(0.5594) [0.0%] Elapsed=2:01:14
+2026-09-29 03:22:38 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3195 [B 1350/1845] BT=1.87(2.44) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3221(0.3290) Cls=0.3220(0.3290) [100.0%] Cons=0.5833(0.5605) [0.0%] Elapsed=2:03:15
+2026-09-29 03:24:39 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3245 [B 1400/1845] BT=1.87(2.44) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3372(0.3287) Cls=0.3372(0.3287) [100.0%] Cons=0.5830(0.5614) [0.0%] Elapsed=2:05:17
+2026-09-29 03:26:44 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3295 [B 1450/1845] BT=1.87(2.44) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3180(0.3285) Cls=0.3180(0.3285) [100.0%] Cons=0.5905(0.5622) [0.0%] Elapsed=2:07:21
+2026-09-29 03:28:44 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3345 [B 1500/1845] BT=1.87(2.44) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3297(0.3282) Cls=0.3297(0.3282) [100.0%] Cons=0.5909(0.5631) [0.0%] Elapsed=2:09:21
+2026-09-29 03:30:44 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3395 [B 1550/1845] BT=1.87(2.44) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3248(0.3279) Cls=0.3248(0.3279) [100.0%] Cons=0.5800(0.5639) [0.0%] Elapsed=2:11:21
+2026-09-29 03:32:44 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3445 [B 1600/1845] BT=1.87(2.43) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3103(0.3277) Cls=0.3103(0.3277) [100.0%] Cons=0.6040(0.5650) [0.0%] Elapsed=2:13:21
+2026-09-29 03:34:49 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3495 [B 1650/1845] BT=1.87(2.44) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3425(0.3275) Cls=0.3425(0.3275) [100.0%] Cons=0.5873(0.5658) [0.0%] Elapsed=2:15:26
+2026-09-29 03:36:49 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3545 [B 1700/1845] BT=1.87(2.44) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3414(0.3272) Cls=0.3413(0.3272) [100.0%] Cons=0.5908(0.5665) [0.0%] Elapsed=2:17:26
+2026-09-29 03:38:49 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3595 [B 1750/1845] BT=1.87(2.43) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3176(0.3269) Cls=0.3176(0.3269) [100.0%] Cons=0.5954(0.5674) [0.0%] Elapsed=2:19:26
+2026-09-29 03:40:49 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3645 [B 1800/1845] BT=1.88(2.43) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3065(0.3266) Cls=0.3065(0.3266) [100.0%] Cons=0.5976(0.5681) [0.0%] Elapsed=2:21:26
+2026-09-29 03:42:34 INFO Ark+ MIMIC head=0 Cycle=2 g_step=3690 [B 1845/1845] BT=1.51(2.43) DT=0.00(0.56) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3027(0.3263) Cls=0.3027(0.3263) [100.0%] Cons=0.6120(0.5690) [0.0%] Elapsed=2:23:12
+2026-09-29 03:42:35 INFO Finished MIMIC Cycle=2: Loss=0.3263 Cls=0.3263 [100.0%] Cons=0.5690 [0.0%] m=0.90001
+2026-09-29 03:42:35 INFO Evaluating student and teacher test sets at after_MIMIC in Cycle 2
+2026-09-29 03:44:32 INFO Test after_MIMIC MIMIC: student_mean_auroc=0.625492 teacher_mean_auroc=0.487956
+2026-09-29 03:44:32 INFO Test summary after_MIMIC Cycle=2: Student=[np.float64(0.6254915303995531)] Teacher=[np.float64(0.48795563986414325)]
+2026-09-29 03:44:32 INFO Evaluating student and teacher validation sets at after_MIMIC in Cycle 2
+2026-09-29 03:45:47 INFO Validation after_MIMIC MIMIC: student_loss=0.319338 teacher_loss=0.666581 student_mean_auroc=0.694563 teacher_mean_auroc=0.492509
+2026-09-29 03:45:47 INFO Validation summary after_MIMIC Cycle=2: student_losses=[0.3193379004278218] teacher_losses=[0.6665810135765164] student_mean_aurocs=[np.float64(0.6945629090840482)] teacher_mean_aurocs=[np.float64(0.4925088499857431)]
+2026-09-29 03:45:50 INFO Cycle 0003: learning rate = 1.14210526e-03
+2026-09-29 03:45:50 INFO Dataset 1 (MIMIC): momentum = 0.900025, classification/consistency = 0.9999/0.0001 (100.0%/0.0%)
+2026-09-29 03:47:51 INFO Ark+ MIMIC head=0 Cycle=3 g_step=3740 [B 50/1845] BT=1.87(2.43) DT=0.00(0.55) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3030(0.3208) Cls=0.3030(0.3208) [100.0%] Cons=0.5753(0.5715) [0.0%] Elapsed=2:28:28
+2026-09-29 03:49:36 INFO Ark+ MIMIC head=0 Cycle=3 g_step=3790 [B 100/1845] BT=1.87(2.27) DT=0.00(0.39) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3157(0.3188) Cls=0.3157(0.3187) [100.0%] Cons=0.5753(0.5749) [0.0%] Elapsed=2:30:14
+2026-09-29 03:51:20 INFO Ark+ MIMIC head=0 Cycle=3 g_step=3840 [B 150/1845] BT=1.87(2.20) DT=0.00(0.32) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3303(0.3181) Cls=0.3303(0.3181) [100.0%] Cons=0.5705(0.5763) [0.0%] Elapsed=2:31:57
+2026-09-29 03:53:04 INFO Ark+ MIMIC head=0 Cycle=3 g_step=3890 [B 200/1845] BT=1.87(2.17) DT=0.00(0.30) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3172(0.3177) Cls=0.3171(0.3177) [100.0%] Cons=0.5588(0.5763) [0.0%] Elapsed=2:33:41
+2026-09-29 03:54:52 INFO Ark+ MIMIC head=0 Cycle=3 g_step=3940 [B 250/1845] BT=3.59(2.17) DT=1.70(0.30) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3152(0.3177) Cls=0.3151(0.3176) [100.0%] Cons=0.5874(0.5759) [0.0%] Elapsed=2:35:29
+2026-09-29 03:56:37 INFO Ark+ MIMIC head=0 Cycle=3 g_step=3990 [B 300/1845] BT=1.87(2.16) DT=0.00(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3156(0.3175) Cls=0.3155(0.3174) [100.0%] Cons=0.5849(0.5782) [0.0%] Elapsed=2:37:14
+2026-09-29 03:58:22 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4040 [B 350/1845] BT=1.87(2.15) DT=0.00(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3188(0.3171) Cls=0.3188(0.3171) [100.0%] Cons=0.5721(0.5791) [0.0%] Elapsed=2:39:00
+2026-09-29 04:00:08 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4090 [B 400/1845] BT=1.87(2.15) DT=0.00(0.27) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.2882(0.3172) Cls=0.2882(0.3171) [100.0%] Cons=0.5922(0.5802) [0.0%] Elapsed=2:40:45
+2026-09-29 04:01:57 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4140 [B 450/1845] BT=1.87(2.15) DT=0.00(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.2928(0.3167) Cls=0.2928(0.3167) [100.0%] Cons=0.5977(0.5818) [0.0%] Elapsed=2:42:34
+2026-09-29 04:03:47 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4190 [B 500/1845] BT=1.87(2.15) DT=0.00(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3073(0.3167) Cls=0.3073(0.3166) [100.0%] Cons=0.5978(0.5829) [0.0%] Elapsed=2:44:24
+2026-09-29 04:05:34 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4240 [B 550/1845] BT=1.87(2.15) DT=0.00(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3122(0.3166) Cls=0.3122(0.3166) [100.0%] Cons=0.5846(0.5833) [0.0%] Elapsed=2:46:12
+2026-09-29 04:07:21 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4290 [B 600/1845] BT=1.87(2.15) DT=0.00(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3134(0.3167) Cls=0.3134(0.3167) [100.0%] Cons=0.5946(0.5844) [0.0%] Elapsed=2:47:58
+2026-09-29 04:09:08 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4340 [B 650/1845] BT=1.95(2.15) DT=0.08(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3093(0.3163) Cls=0.3092(0.3163) [100.0%] Cons=0.5904(0.5855) [0.0%] Elapsed=2:49:46
+2026-09-29 04:10:56 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4390 [B 700/1845] BT=1.87(2.15) DT=0.00(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3230(0.3161) Cls=0.3230(0.3161) [100.0%] Cons=0.5962(0.5861) [0.0%] Elapsed=2:51:33
+2026-09-29 04:12:43 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4440 [B 750/1845] BT=1.87(2.15) DT=0.00(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3078(0.3158) Cls=0.3078(0.3157) [100.0%] Cons=0.6072(0.5869) [0.0%] Elapsed=2:53:20
+2026-09-29 04:14:30 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4490 [B 800/1845] BT=1.87(2.15) DT=0.00(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3201(0.3157) Cls=0.3201(0.3156) [100.0%] Cons=0.5970(0.5883) [0.0%] Elapsed=2:55:08
+2026-09-29 04:16:18 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4540 [B 850/1845] BT=4.13(2.15) DT=2.23(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3243(0.3157) Cls=0.3243(0.3156) [100.0%] Cons=0.6133(0.5896) [0.0%] Elapsed=2:56:55
+2026-09-29 04:18:04 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4590 [B 900/1845] BT=1.87(2.15) DT=0.00(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3182(0.3155) Cls=0.3181(0.3155) [100.0%] Cons=0.6195(0.5907) [0.0%] Elapsed=2:58:41
+2026-09-29 04:19:50 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4640 [B 950/1845] BT=1.87(2.15) DT=0.00(0.27) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.2895(0.3153) Cls=0.2895(0.3152) [100.0%] Cons=0.6243(0.5922) [0.0%] Elapsed=3:00:27
+2026-09-29 04:21:35 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4690 [B 1000/1845] BT=1.87(2.15) DT=0.00(0.27) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3314(0.3153) Cls=0.3314(0.3152) [100.0%] Cons=0.6194(0.5933) [0.0%] Elapsed=3:02:12
+2026-09-29 04:23:23 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4740 [B 1050/1845] BT=4.05(2.15) DT=2.15(0.27) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3162(0.3151) Cls=0.3162(0.3151) [100.0%] Cons=0.6074(0.5941) [0.0%] Elapsed=3:04:01
+2026-09-29 04:25:08 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4790 [B 1100/1845] BT=1.87(2.14) DT=0.00(0.27) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3342(0.3150) Cls=0.3342(0.3149) [100.0%] Cons=0.5944(0.5949) [0.0%] Elapsed=3:05:45
+2026-09-29 04:26:53 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4840 [B 1150/1845] BT=1.87(2.14) DT=0.00(0.27) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3145(0.3148) Cls=0.3145(0.3148) [100.0%] Cons=0.6201(0.5959) [0.0%] Elapsed=3:07:30
+2026-09-29 04:28:39 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4890 [B 1200/1845] BT=1.87(2.14) DT=0.00(0.27) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.2917(0.3146) Cls=0.2917(0.3145) [100.0%] Cons=0.6300(0.5970) [0.0%] Elapsed=3:09:16
+2026-09-29 04:30:27 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4940 [B 1250/1845] BT=3.85(2.14) DT=1.97(0.27) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.2904(0.3145) Cls=0.2904(0.3145) [100.0%] Cons=0.6424(0.5984) [0.0%] Elapsed=3:11:05
+2026-09-29 04:32:12 INFO Ark+ MIMIC head=0 Cycle=3 g_step=4990 [B 1300/1845] BT=1.87(2.14) DT=0.00(0.27) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.2887(0.3144) Cls=0.2887(0.3144) [100.0%] Cons=0.6212(0.5995) [0.0%] Elapsed=3:12:49
+2026-09-29 04:33:59 INFO Ark+ MIMIC head=0 Cycle=3 g_step=5040 [B 1350/1845] BT=1.87(2.14) DT=0.00(0.27) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3205(0.3143) Cls=0.3205(0.3143) [100.0%] Cons=0.6352(0.6008) [0.0%] Elapsed=3:14:36
+2026-09-29 04:35:44 INFO Ark+ MIMIC head=0 Cycle=3 g_step=5090 [B 1400/1845] BT=1.87(2.14) DT=0.00(0.27) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3016(0.3142) Cls=0.3016(0.3142) [100.0%] Cons=0.6369(0.6020) [0.0%] Elapsed=3:16:21
+2026-09-29 04:37:30 INFO Ark+ MIMIC head=0 Cycle=3 g_step=5140 [B 1450/1845] BT=4.08(2.14) DT=2.20(0.26) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.2988(0.3139) Cls=0.2987(0.3139) [100.0%] Cons=0.6318(0.6033) [0.0%] Elapsed=3:18:07
+2026-09-29 04:39:16 INFO Ark+ MIMIC head=0 Cycle=3 g_step=5190 [B 1500/1845] BT=1.87(2.14) DT=0.00(0.26) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3000(0.3139) Cls=0.3000(0.3139) [100.0%] Cons=0.6454(0.6042) [0.0%] Elapsed=3:19:53
+2026-09-29 04:41:01 INFO Ark+ MIMIC head=0 Cycle=3 g_step=5240 [B 1550/1845] BT=1.87(2.14) DT=0.00(0.26) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.2941(0.3137) Cls=0.2941(0.3137) [100.0%] Cons=0.6486(0.6054) [0.0%] Elapsed=3:21:38
+2026-09-29 04:42:46 INFO Ark+ MIMIC head=0 Cycle=3 g_step=5290 [B 1600/1845] BT=1.87(2.14) DT=0.00(0.26) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3188(0.3137) Cls=0.3188(0.3137) [100.0%] Cons=0.6434(0.6065) [0.0%] Elapsed=3:23:24
+2026-09-29 04:44:32 INFO Ark+ MIMIC head=0 Cycle=3 g_step=5340 [B 1650/1845] BT=3.62(2.13) DT=1.75(0.26) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3040(0.3136) Cls=0.3040(0.3136) [100.0%] Cons=0.6165(0.6067) [0.0%] Elapsed=3:25:10
+2026-09-29 04:46:16 INFO Ark+ MIMIC head=0 Cycle=3 g_step=5390 [B 1700/1845] BT=1.89(2.13) DT=0.00(0.26) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.2933(0.3134) Cls=0.2932(0.3134) [100.0%] Cons=0.6386(0.6075) [0.0%] Elapsed=3:26:54
+2026-09-29 04:48:03 INFO Ark+ MIMIC head=0 Cycle=3 g_step=5440 [B 1750/1845] BT=1.87(2.13) DT=0.00(0.26) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3131(0.3132) Cls=0.3131(0.3132) [100.0%] Cons=0.6468(0.6085) [0.0%] Elapsed=3:28:40
+2026-09-29 04:49:50 INFO Ark+ MIMIC head=0 Cycle=3 g_step=5490 [B 1800/1845] BT=1.87(2.13) DT=0.00(0.26) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3117(0.3130) Cls=0.3117(0.3130) [100.0%] Cons=0.6447(0.6098) [0.0%] Elapsed=3:30:28
+2026-09-29 04:51:23 INFO Ark+ MIMIC head=0 Cycle=3 g_step=5535 [B 1845/1845] BT=1.51(2.13) DT=0.00(0.26) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3147(0.3128) Cls=0.3146(0.3128) [100.0%] Cons=0.6565(0.6107) [0.0%] Elapsed=3:32:01
+2026-09-29 04:51:24 INFO Finished MIMIC Cycle=3: Loss=0.3128 Cls=0.3128 [100.0%] Cons=0.6107 [0.0%] m=0.90002
+2026-09-29 04:51:24 INFO Evaluating student and teacher test sets at after_MIMIC in Cycle 3
+2026-09-29 04:53:01 INFO Test after_MIMIC MIMIC: student_mean_auroc=0.665310 teacher_mean_auroc=0.495899
+2026-09-29 04:53:01 INFO Test summary after_MIMIC Cycle=3: Student=[np.float64(0.6653099553930255)] Teacher=[np.float64(0.49589933182146967)]
+2026-09-29 04:53:01 INFO Evaluating student and teacher validation sets at after_MIMIC in Cycle 3
+2026-09-29 04:54:05 INFO Validation after_MIMIC MIMIC: student_loss=0.308838 teacher_loss=0.643906 student_mean_auroc=0.728139 teacher_mean_auroc=0.497967
+2026-09-29 04:54:05 INFO Validation summary after_MIMIC Cycle=3: student_losses=[0.3088384475328579] teacher_losses=[0.643905983346635] student_mean_aurocs=[np.float64(0.728139074426447)] teacher_mean_aurocs=[np.float64(0.4979674113908585)]
+2026-09-29 04:54:07 INFO Cycle 0004: learning rate = 1.66315789e-03
+2026-09-29 04:54:07 INFO Dataset 1 (MIMIC): momentum = 0.900056, classification/consistency = 0.9997/0.0003 (100.0%/0.0%)
+2026-09-29 04:56:09 INFO Ark+ MIMIC head=0 Cycle=4 g_step=5585 [B 50/1845] BT=1.87(2.43) DT=0.00(0.55) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.2927(0.3105) Cls=0.2926(0.3104) [99.9%] Cons=0.6193(0.6233) [0.1%] Elapsed=3:36:46
+2026-09-29 04:57:55 INFO Ark+ MIMIC head=0 Cycle=4 g_step=5635 [B 100/1845] BT=1.87(2.27) DT=0.00(0.40) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3117(0.3094) Cls=0.3116(0.3093) [99.9%] Cons=0.6246(0.6200) [0.1%] Elapsed=3:38:32
+2026-09-29 04:59:41 INFO Ark+ MIMIC head=0 Cycle=4 g_step=5685 [B 150/1845] BT=1.87(2.22) DT=0.00(0.35) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3234(0.3084) Cls=0.3233(0.3083) [99.9%] Cons=0.6150(0.6197) [0.1%] Elapsed=3:40:18
+2026-09-29 05:01:27 INFO Ark+ MIMIC head=0 Cycle=4 g_step=5735 [B 200/1845] BT=1.87(2.20) DT=0.00(0.32) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3289(0.3076) Cls=0.3288(0.3075) [99.9%] Cons=0.6218(0.6190) [0.1%] Elapsed=3:42:04
+2026-09-29 05:03:12 INFO Ark+ MIMIC head=0 Cycle=4 g_step=5785 [B 250/1845] BT=1.87(2.18) DT=0.00(0.30) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.2938(0.3076) Cls=0.2937(0.3075) [99.9%] Cons=0.6128(0.6176) [0.1%] Elapsed=3:43:49
+2026-09-29 05:04:57 INFO Ark+ MIMIC head=0 Cycle=4 g_step=5835 [B 300/1845] BT=1.87(2.17) DT=0.00(0.29) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3087(0.3078) Cls=0.3086(0.3077) [99.9%] Cons=0.6038(0.6160) [0.1%] Elapsed=3:45:34
+2026-09-29 05:06:41 INFO Ark+ MIMIC head=0 Cycle=4 g_step=5885 [B 350/1845] BT=1.87(2.15) DT=0.00(0.28) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.2963(0.3075) Cls=0.2962(0.3075) [99.9%] Cons=0.6131(0.6163) [0.1%] Elapsed=3:47:18
+2026-09-29 05:08:26 INFO Ark+ MIMIC head=0 Cycle=4 g_step=5935 [B 400/1845] BT=1.87(2.15) DT=0.00(0.27) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3016(0.3075) Cls=0.3015(0.3074) [99.9%] Cons=0.6160(0.6167) [0.1%] Elapsed=3:49:04
+2026-09-29 05:10:13 INFO Ark+ MIMIC head=0 Cycle=4 g_step=5985 [B 450/1845] BT=1.87(2.15) DT=0.00(0.27) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3084(0.3076) Cls=0.3083(0.3075) [99.9%] Cons=0.6309(0.6173) [0.1%] Elapsed=3:50:50
+2026-09-29 05:12:00 INFO Ark+ MIMIC head=0 Cycle=4 g_step=6035 [B 500/1845] BT=1.93(2.15) DT=0.00(0.27) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.2972(0.3076) Cls=0.2971(0.3075) [99.9%] Cons=0.6025(0.6177) [0.1%] Elapsed=3:52:37
+2026-09-29 05:13:45 INFO Ark+ MIMIC head=0 Cycle=4 g_step=6085 [B 550/1845] BT=1.87(2.14) DT=0.00(0.27) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.2932(0.3081) Cls=0.2932(0.3080) [99.9%] Cons=0.6115(0.6166) [0.1%] Elapsed=3:54:23
+2026-09-29 05:15:32 INFO Ark+ MIMIC head=0 Cycle=4 g_step=6135 [B 600/1845] BT=1.87(2.14) DT=0.00(0.27) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3003(0.3080) Cls=0.3002(0.3079) [99.9%] Cons=0.6183(0.6171) [0.1%] Elapsed=3:56:10
+2026-09-29 05:17:19 INFO Ark+ MIMIC head=0 Cycle=4 g_step=6185 [B 650/1845] BT=1.87(2.14) DT=0.00(0.26) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3145(0.3075) Cls=0.3144(0.3074) [99.9%] Cons=0.6394(0.6183) [0.1%] Elapsed=3:57:56

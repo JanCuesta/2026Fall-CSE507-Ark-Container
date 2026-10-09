@@ -1,0 +1,126 @@
+2026-09-11 02:11:04 INFO ================================================================================
+2026-09-11 02:11:04 INFO ARK+ PRETRAINING CONFIGURATION
+2026-09-11 02:11:04 INFO ================================================================================
+2026-09-11 02:11:04 INFO Run Name: vindr_cxr_only
+2026-09-11 02:11:04 INFO Seed: 997
+2026-09-11 02:11:04 INFO Output Directory: /workspace/vindr_cxr_only_seed_997
+2026-09-11 02:11:04 INFO Backbone: swin_base
+2026-09-11 02:11:04 INFO Initialization: imagenet
+2026-09-11 02:11:04 INFO Pretrained Weights: True
+2026-09-11 02:11:04 INFO Projector Features: 1376
+2026-09-11 02:11:04 INFO Datasets: ['VinDrCXR']
+2026-09-11 02:11:04 INFO Class Counts: [6]
+2026-09-11 02:11:04 INFO Global Batch Size: 200
+2026-09-11 02:11:04 INFO Per-rank Batch Size: 200
+2026-09-11 02:11:04 INFO Distributed World Size: 1
+2026-09-11 02:11:04 INFO Data Loader Workers Per Rank: 8
+2026-09-11 02:11:04 INFO Cycles: 200
+2026-09-11 02:11:04 INFO Training Strategy: cyclic
+2026-09-11 02:11:04 INFO Optimizer: sgd
+2026-09-11 02:11:04 INFO Initial Learning Rate: 0.0001
+2026-09-11 02:11:04 INFO Peak Learning Rate: 0.01
+2026-09-11 02:11:04 INFO Final Learning Rate: 1e-05
+2026-09-11 02:11:04 INFO Warmup Cycles: 20
+2026-09-11 02:11:04 INFO Teacher Momentum Base: 0.9
+2026-09-11 02:11:04 INFO Teacher EMA Mode: epoch
+2026-09-11 02:11:04 INFO Validation Evaluation: student and teacher after every dataset
+2026-09-11 02:11:04 INFO Test Evaluation: student and teacher after every dataset
+2026-09-11 02:11:04 INFO Train Augmentation: enabled (stochastic student transforms)
+2026-09-11 02:11:04 INFO Test-time Augmentation: enabled (ten-crop)
+2026-09-11 02:11:04 INFO Saved Weights: every cycle
+2026-09-11 02:11:04 INFO Resumable Checkpoints: every 10 cycles plus the latest completed cycle
+2026-09-11 02:11:04 INFO Precision: fp32
+2026-09-11 02:11:04 INFO Device: cuda:0
+2026-09-11 02:11:04 INFO Execution Mode: eager
+2026-09-11 02:11:04 INFO Dataset VinDrCXR: train=15,000 val=3,000 test=3,000 labels=6
+2026-09-11 02:11:04 INFO ================================================================================
+2026-09-11 02:11:04 INFO Label distribution:
+2026-09-11 02:11:04 INFO Dataset 1/1: VinDrCXR
+2026-09-11 02:11:04 INFO   Train: 15000 samples
+2026-09-11 02:11:04 INFO     PE: positive 1038 (6.9%), negative 13962 (93.1%)
+2026-09-11 02:11:04 INFO     Lung tumor: positive 291 (1.9%), negative 14709 (98.1%)
+2026-09-11 02:11:04 INFO     Pneumonia: positive 919 (6.1%), negative 14081 (93.9%)
+2026-09-11 02:11:04 INFO     Tuberculosis: positive 750 (5.0%), negative 14250 (95.0%)
+2026-09-11 02:11:04 INFO     Other diseases: positive 4377 (29.2%), negative 10623 (70.8%)
+2026-09-11 02:11:04 INFO     No finding: positive 10606 (70.7%), negative 4394 (29.3%)
+2026-09-11 02:11:04 INFO   Validation (test split): 3000 samples
+2026-09-11 02:11:04 INFO     PE: positive 111 (3.7%), negative 2889 (96.3%)
+2026-09-11 02:11:04 INFO     Lung tumor: positive 80 (2.7%), negative 2920 (97.3%)
+2026-09-11 02:11:04 INFO     Pneumonia: positive 246 (8.2%), negative 2754 (91.8%)
+2026-09-11 02:11:04 INFO     Tuberculosis: positive 164 (5.5%), negative 2836 (94.5%)
+2026-09-11 02:11:04 INFO     Other diseases: positive 657 (21.9%), negative 2343 (78.1%)
+2026-09-11 02:11:04 INFO     No finding: positive 2051 (68.4%), negative 949 (31.6%)
+2026-09-11 02:11:04 INFO   Test: 3000 samples
+2026-09-11 02:11:04 INFO     PE: positive 111 (3.7%), negative 2889 (96.3%)
+2026-09-11 02:11:04 INFO     Lung tumor: positive 80 (2.7%), negative 2920 (97.3%)
+2026-09-11 02:11:04 INFO     Pneumonia: positive 246 (8.2%), negative 2754 (91.8%)
+2026-09-11 02:11:04 INFO     Tuberculosis: positive 164 (5.5%), negative 2836 (94.5%)
+2026-09-11 02:11:04 INFO     Other diseases: positive 657 (21.9%), negative 2343 (78.1%)
+2026-09-11 02:11:04 INFO     No finding: positive 2051 (68.4%), negative 949 (31.6%)
+2026-09-11 02:11:04 INFO Dataset VinDrCXR: validation/test samples identical = True; test evaluation will also be recorded as validation
+2026-09-11 02:11:08 INFO Removing key ['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask'] from pretrained checkpoint
+2026-09-11 02:11:08 INFO Loaded with msg: _IncompatibleKeys(missing_keys=['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask', 'projector.weight', 'projector.bias', 'omni_heads.0.weight', 'omni_heads.0.bias'], unexpected_keys=[])
+2026-09-11 02:11:09 INFO Removing key ['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask'] from pretrained checkpoint
+2026-09-11 02:11:10 INFO Loaded with msg: _IncompatibleKeys(missing_keys=['layers.0.blocks.1.attn_mask', 'layers.1.blocks.1.attn_mask', 'layers.2.blocks.1.attn_mask', 'layers.2.blocks.3.attn_mask', 'layers.2.blocks.5.attn_mask', 'layers.2.blocks.7.attn_mask', 'layers.2.blocks.9.attn_mask', 'layers.2.blocks.11.attn_mask', 'layers.2.blocks.13.attn_mask', 'layers.2.blocks.15.attn_mask', 'layers.2.blocks.17.attn_mask', 'projector.weight', 'projector.bias', 'omni_heads.0.weight', 'omni_heads.0.bias'], unexpected_keys=[])
+2026-09-11 02:11:10 INFO Student and Teacher are built: they are both swin_base network.
+2026-09-11 02:11:10 INFO Cycle 0001: learning rate = 1.00000000e-04
+2026-09-11 02:11:10 INFO Dataset 1 (VinDrCXR): momentum = 0.900000, classification/consistency = 1.0000/0.0000 (100.0%/0.0%)
+2026-09-11 02:13:10 INFO Ark+ VinDrCXR head=0 Cycle=1 g_step=50 [B 50/75] BT=1.87(2.41) DT=0.00(0.33) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.5547(0.6216) Cls=0.5547(0.6216) [100.0%] Cons=0.1912(0.1710) [0.0%] Elapsed=0:02:09
+2026-09-11 02:13:57 INFO Ark+ VinDrCXR head=0 Cycle=1 g_step=75 [B 75/75] BT=1.87(2.23) DT=0.00(0.22) LR=1.00e-04 m=0.90000 w_cons=0.000 Loss=0.4666(0.5828) Cls=0.4666(0.5828) [100.0%] Cons=0.2183(0.1830) [0.0%] Elapsed=0:02:56
+2026-09-11 02:13:57 INFO Finished VinDrCXR Cycle=1: Loss=0.5828 Cls=0.5828 [100.0%] Cons=0.1830 [0.0%] m=0.90000
+2026-09-11 02:13:57 INFO Evaluating student and teacher test sets at after_VinDrCXR in Cycle 1
+2026-09-11 02:16:38 INFO Test after_VinDrCXR VinDrCXR: student_mean_auroc=0.498233 teacher_mean_auroc=0.466683
+2026-09-11 02:16:38 INFO Test summary after_VinDrCXR Cycle=1: Student=[np.float64(0.49823301318957)] Teacher=[np.float64(0.4666825061243383)]
+2026-09-11 02:16:38 INFO Evaluating student and teacher validation sets at after_VinDrCXR in Cycle 1
+2026-09-11 02:16:38 INFO Skipping separate validation evaluation for VinDrCXR at after_VinDrCXR; validation and test samples are identical
+2026-09-11 02:16:38 INFO Validation summary after_VinDrCXR Cycle=1: student_losses=[None] teacher_losses=[None] student_mean_aurocs=[] teacher_mean_aurocs=[]
+2026-09-11 02:16:40 INFO Cycle 0002: learning rate = 6.21052632e-04
+2026-09-11 02:16:40 INFO Dataset 1 (VinDrCXR): momentum = 0.900006, classification/consistency = 1.0000/0.0000 (100.0%/0.0%)
+2026-09-11 02:18:45 INFO Ark+ VinDrCXR head=0 Cycle=2 g_step=125 [B 50/75] BT=1.88(2.49) DT=0.00(0.60) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3399(0.3506) Cls=0.3399(0.3506) [100.0%] Cons=0.3231(0.2908) [0.0%] Elapsed=0:07:43
+2026-09-11 02:19:34 INFO Ark+ VinDrCXR head=0 Cycle=2 g_step=150 [B 75/75] BT=1.87(2.32) DT=0.00(0.44) LR=6.21e-04 m=0.90001 w_cons=0.000 Loss=0.3209(0.3453) Cls=0.3209(0.3453) [100.0%] Cons=0.3243(0.3022) [0.0%] Elapsed=0:08:33
+2026-09-11 02:19:34 INFO Finished VinDrCXR Cycle=2: Loss=0.3453 Cls=0.3453 [100.0%] Cons=0.3022 [0.0%] m=0.90001
+2026-09-11 02:19:34 INFO Evaluating student and teacher test sets at after_VinDrCXR in Cycle 2
+2026-09-11 02:22:04 INFO Test after_VinDrCXR VinDrCXR: student_mean_auroc=0.632411 teacher_mean_auroc=0.457943
+2026-09-11 02:22:04 INFO Test summary after_VinDrCXR Cycle=2: Student=[np.float64(0.6324106105625903)] Teacher=[np.float64(0.4579431423010793)]
+2026-09-11 02:22:04 INFO Evaluating student and teacher validation sets at after_VinDrCXR in Cycle 2
+2026-09-11 02:22:04 INFO Skipping separate validation evaluation for VinDrCXR at after_VinDrCXR; validation and test samples are identical
+2026-09-11 02:22:04 INFO Validation summary after_VinDrCXR Cycle=2: student_losses=[None] teacher_losses=[None] student_mean_aurocs=[] teacher_mean_aurocs=[]
+2026-09-11 02:22:07 INFO Cycle 0003: learning rate = 1.14210526e-03
+2026-09-11 02:22:07 INFO Dataset 1 (VinDrCXR): momentum = 0.900025, classification/consistency = 0.9999/0.0001 (100.0%/0.0%)
+2026-09-11 02:23:56 INFO Ark+ VinDrCXR head=0 Cycle=3 g_step=200 [B 50/75] BT=1.87(2.17) DT=0.00(0.28) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.3270(0.3200) Cls=0.3270(0.3200) [100.0%] Cons=0.3275(0.3139) [0.0%] Elapsed=0:12:55
+2026-09-11 02:24:43 INFO Ark+ VinDrCXR head=0 Cycle=3 g_step=225 [B 75/75] BT=1.87(2.07) DT=0.00(0.19) LR=1.14e-03 m=0.90002 w_cons=0.000 Loss=0.2594(0.3190) Cls=0.2594(0.3190) [100.0%] Cons=0.3319(0.3196) [0.0%] Elapsed=0:13:41
+2026-09-11 02:24:43 INFO Finished VinDrCXR Cycle=3: Loss=0.3190 Cls=0.3190 [100.0%] Cons=0.3196 [0.0%] m=0.90002
+2026-09-11 02:24:43 INFO Evaluating student and teacher test sets at after_VinDrCXR in Cycle 3
+2026-09-11 02:27:14 INFO Test after_VinDrCXR VinDrCXR: student_mean_auroc=0.674585 teacher_mean_auroc=0.456954
+2026-09-11 02:27:14 INFO Test summary after_VinDrCXR Cycle=3: Student=[np.float64(0.6745853982955613)] Teacher=[np.float64(0.456954421105393)]
+2026-09-11 02:27:14 INFO Evaluating student and teacher validation sets at after_VinDrCXR in Cycle 3
+2026-09-11 02:27:14 INFO Skipping separate validation evaluation for VinDrCXR at after_VinDrCXR; validation and test samples are identical
+2026-09-11 02:27:14 INFO Validation summary after_VinDrCXR Cycle=3: student_losses=[None] teacher_losses=[None] student_mean_aurocs=[] teacher_mean_aurocs=[]
+2026-09-11 02:27:16 INFO Cycle 0004: learning rate = 1.66315789e-03
+2026-09-11 02:27:16 INFO Dataset 1 (VinDrCXR): momentum = 0.900056, classification/consistency = 0.9997/0.0003 (100.0%/0.0%)
+2026-09-11 02:29:06 INFO Ark+ VinDrCXR head=0 Cycle=4 g_step=275 [B 50/75] BT=1.88(2.18) DT=0.00(0.28) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.3063(0.2952) Cls=0.3063(0.2952) [100.0%] Cons=0.3352(0.3257) [0.0%] Elapsed=0:18:04
+2026-09-11 02:29:52 INFO Ark+ VinDrCXR head=0 Cycle=4 g_step=300 [B 75/75] BT=1.87(2.08) DT=0.00(0.19) LR=1.66e-03 m=0.90006 w_cons=0.000 Loss=0.2661(0.2920) Cls=0.2661(0.2920) [100.0%] Cons=0.3501(0.3334) [0.0%] Elapsed=0:18:51
+2026-09-11 02:29:53 INFO Finished VinDrCXR Cycle=4: Loss=0.2920 Cls=0.2920 [100.0%] Cons=0.3334 [0.0%] m=0.90006
+2026-09-11 02:29:53 INFO Evaluating student and teacher test sets at after_VinDrCXR in Cycle 4
+2026-09-11 02:32:25 INFO Test after_VinDrCXR VinDrCXR: student_mean_auroc=0.770789 teacher_mean_auroc=0.465771
+2026-09-11 02:32:25 INFO Test summary after_VinDrCXR Cycle=4: Student=[np.float64(0.7707888723777852)] Teacher=[np.float64(0.46577104088339955)]
+2026-09-11 02:32:25 INFO Evaluating student and teacher validation sets at after_VinDrCXR in Cycle 4
+2026-09-11 02:32:25 INFO Skipping separate validation evaluation for VinDrCXR at after_VinDrCXR; validation and test samples are identical
+2026-09-11 02:32:25 INFO Validation summary after_VinDrCXR Cycle=4: student_losses=[None] teacher_losses=[None] student_mean_aurocs=[] teacher_mean_aurocs=[]
+2026-09-11 02:32:27 INFO Cycle 0005: learning rate = 2.18421053e-03
+2026-09-11 02:32:27 INFO Dataset 1 (VinDrCXR): momentum = 0.900099, classification/consistency = 0.9995/0.0005 (100.0%/0.0%)
+2026-09-11 02:34:16 INFO Ark+ VinDrCXR head=0 Cycle=5 g_step=350 [B 50/75] BT=1.87(2.18) DT=0.00(0.30) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.2619(0.2667) Cls=0.2618(0.2666) [99.9%] Cons=0.3565(0.3425) [0.1%] Elapsed=0:23:15
+2026-09-11 02:35:03 INFO Ark+ VinDrCXR head=0 Cycle=5 g_step=375 [B 75/75] BT=1.87(2.08) DT=0.00(0.20) LR=2.18e-03 m=0.90010 w_cons=0.000 Loss=0.2632(0.2654) Cls=0.2631(0.2654) [99.9%] Cons=0.3571(0.3476) [0.1%] Elapsed=0:24:02
+2026-09-11 02:35:03 INFO Finished VinDrCXR Cycle=5: Loss=0.2654 Cls=0.2654 [99.9%] Cons=0.3476 [0.1%] m=0.90010
+2026-09-11 02:35:03 INFO Evaluating student and teacher test sets at after_VinDrCXR in Cycle 5
+2026-09-11 02:37:33 INFO Test after_VinDrCXR VinDrCXR: student_mean_auroc=0.792528 teacher_mean_auroc=0.503765
+2026-09-11 02:37:33 INFO Test summary after_VinDrCXR Cycle=5: Student=[np.float64(0.7925275934260193)] Teacher=[np.float64(0.5037654598338009)]
+2026-09-11 02:37:33 INFO Evaluating student and teacher validation sets at after_VinDrCXR in Cycle 5
+2026-09-11 02:37:33 INFO Skipping separate validation evaluation for VinDrCXR at after_VinDrCXR; validation and test samples are identical
+2026-09-11 02:37:33 INFO Validation summary after_VinDrCXR Cycle=5: student_losses=[None] teacher_losses=[None] student_mean_aurocs=[] teacher_mean_aurocs=[]
+2026-09-11 02:37:36 INFO Cycle 0006: learning rate = 2.70526316e-03
+2026-09-11 02:37:36 INFO Dataset 1 (VinDrCXR): momentum = 0.900154, classification/consistency = 0.9992/0.0008 (99.9%/0.1%)
+2026-09-11 02:39:25 INFO Ark+ VinDrCXR head=0 Cycle=6 g_step=425 [B 50/75] BT=1.87(2.18) DT=0.00(0.29) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.2329(0.2481) Cls=0.2328(0.2481) [99.9%] Cons=0.3667(0.3463) [0.1%] Elapsed=0:28:23
+2026-09-11 02:40:12 INFO Ark+ VinDrCXR head=0 Cycle=6 g_step=450 [B 75/75] BT=1.87(2.08) DT=0.00(0.20) LR=2.71e-03 m=0.90015 w_cons=0.001 Loss=0.2325(0.2458) Cls=0.2324(0.2458) [99.9%] Cons=0.3567(0.3490) [0.1%] Elapsed=0:29:10
+2026-09-11 02:40:12 INFO Finished VinDrCXR Cycle=6: Loss=0.2458 Cls=0.2458 [99.9%] Cons=0.3490 [0.1%] m=0.90015
+2026-09-11 02:40:12 INFO Evaluating student and teacher test sets at after_VinDrCXR in Cycle 6
